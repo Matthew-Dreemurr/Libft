@@ -2,6 +2,7 @@
 	"autoHide.autoHideSideBar": false,
 	"autoHide.autoHidePanel": false,
 	"files.associations": {
-		"libft.h": "c"
+		"libft.h": "c",
+		"stdio.h": "c"
 	}
 }

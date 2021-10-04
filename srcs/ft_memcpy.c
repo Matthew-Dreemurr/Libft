@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:06:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/04 14:51:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/04 15:09:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main()
 	char	*ret_ft = NULL;
 	char	*str_ft = strdup("test12345");
 	char	*dst_ft = (char *)malloc(strlen(str_ft));
-	int		size = 3;
+	int		size = 4;
 
 	ret_or = memcpy(dst_or, str_or, size);
 	printf(
@@ -72,7 +72,10 @@ int	main()
 		ret_or, ret_or,
 		dst_or, dst_or
 		);
-	ret_ft = memcpy(dst_ft, str_ft, size);
+		free(str_or);
+		free(dst_or);
+
+	ret_ft = ft_memcpy(dst_ft, str_ft, size);
 	printf(
 		"== FT ==\n"
 		"str_ft [%p] |%s|\n"
@@ -83,9 +86,6 @@ int	main()
 		ret_ft, ret_ft,
 		dst_ft, dst_ft
 		);
-
-		free(str_or);
-		free(dst_or);
 		free(str_ft);
 		free(dst_ft);
 	return (0);
