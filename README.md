@@ -11,7 +11,7 @@
 | ft_memset        | ✅ |
 | ft_bzero         | ✅ |
 | ft_memcpy        | ✅ |
-| ft_memmove       | ❌ |
+| ft_memmove       | ✅ |
 | ft_strlcpy       | ❌ |
 | ft_strlcat       | ❌ |
 | ft_toupper       | ❌ |
