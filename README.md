@@ -17,9 +17,9 @@
 | ft_toupper       | ✅ |
 | ft_tolower       | ✅ |
 | ft_strchr        | ✅ |
-| ft_strrchr       | ❌ |
-| ft_strncmp       | ❌ |
-| ft_memchr        | ❌ |
+| ft_strrchr       | ✅ |
+| ft_strncmp       | ✅ |
+| ft_memchr        | ⚠ |
 | ft_memcmp        | ❌ |
 | ft_strnstr       | ❌ |
 | ft_atoi          | ❌ |
