@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 16:39:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/05 17:43:13 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,25 @@ SYNOPSIS
 *
 *    If the return value is >= dstsize, the output string has been truncated.
 *    It is the caller's responsibility to handle this.
+*
+*  NORMINETTE NOTE
+*  Incrementation operators are separated from assignation operators
+*  https://github.com/42School/norminette/issues/155#issuecomment-859322078
 */
 
-size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t		dst_len;
-	const char	*start_dst;
-	const char	*start_src;
+	const char	*start_ptr;
 
-	start_dst = dst;
-	start_src = src;
-
-	while (dstsize && *dst)
-	{
+	start_ptr = dst;
+	while (dstsize-- && *dst)
 		dst++;
-		dstsize--;
-	}
-	dst_len = (size_t)(dst - start_dst);
+	dst_len = (size_t)(dst - start_ptr);
 	if (!dstsize)
 		return (dst_len + ft_strlen(src));
 	dstsize--;
+	start_ptr = src;
 	while (*src)
 	{
 		if (dstsize)
@@ -89,10 +88,12 @@ size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 		src++;
 	}
 	*dst = '\0';
-	return ((size_t)(dst_len + (src - start_src)));
+	return ((size_t)(dst_len + (src - start_ptr)));
 }
 
 /*
+//gcc -Wall -Wextra -Werror ft_strlcat.c ft_strlen.c  && ./a.out
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:40:12 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 17:03:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/05 17:12:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 *    ment is returned unchanged.
 */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (ft_isalpha(c))
 		if (c >= 'a' && c <= 'z')

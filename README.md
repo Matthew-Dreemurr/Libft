@@ -33,3 +33,7 @@
 | ft_putstr_fd     | ❌ |
 | ft_putendl_fd    | ❌ |
 | ft_putnbr_fd     | ❌ |
+
+## Todo
+
+add compile command in main
