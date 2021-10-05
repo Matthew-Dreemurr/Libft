@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:16:22 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/04 15:23:57 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/05 12:40:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,20 @@ RETURN VALUES
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	
-}
+	size_t	len;
 
-int	main()
-{
-
-
-	return (0);
+	if (!dst)
+		return (0);
+	len = ft_strlen(src);
+	while (*src && dstsize > 0)
+	{
+		*dst = *src;
+		dst++;
+		src++;
+		dstsize--;
+	}
+	*dst = '\0';
+	return (len);
 }
 
 #include <stdio.h>
