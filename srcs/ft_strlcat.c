@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 15:16:22 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 13:06:47 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/05 16:39:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,36 @@ SYNOPSIS
 *    It is the caller's responsibility to handle this.
 */
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t	len;
+	size_t		dst_len;
+	const char	*start_dst;
+	const char	*start_src;
 
-	len = ft_strlen(src);
-	while (*src && dstsize > 1)
+	start_dst = dst;
+	start_src = src;
+
+	while (dstsize && *dst)
 	{
-		*dst = *src;
 		dst++;
-		src++;
 		dstsize--;
 	}
+	dst_len = (size_t)(dst - start_dst);
+	if (!dstsize)
+		return (dst_len + ft_strlen(src));
+	dstsize--;
+	while (*src)
+	{
+		if (dstsize)
+		{
+			*dst = *src;
+			dst++;
+			dstsize--;
+		}
+		src++;
+	}
 	*dst = '\0';
-	return (len);
+	return ((size_t)(dst_len + (src - start_src)));
 }
 
 /*
@@ -81,26 +97,33 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 #include <string.h>
 #include <stdlib.h>
 
-#define TXT "1234test00"
+#define DST "12345#############################"
+#define SRC "abcde"
+#define SZE 11
+
+#define SKIP_OR 5  //number char to skip
+#define TO_SET  30 //number of `\0` to place after `SKIP_OR`
 
 int	main()
 {
-	size_t	size = 1;
+	size_t	size = SZE;
 	
 	size_t	ret_or = 0;
-	char	*str_or = strdup(TXT);
-	char	*dst_or = (char *)malloc(strlen(str_or) + 1);
+	char	*str_or = strdup(SRC);
+	char	*dst_or = strdup(DST);
+	bzero((dst_or + SKIP_OR), TO_SET); // to remove `#`
 	
 	size_t	ret_ft = 0;
-	char	*str_ft = strdup(TXT);
-	char	*dst_ft = (char *)malloc(strlen(str_ft) + 1);
+	char	*str_ft = strdup(SRC);
+	char	*dst_ft = strdup(DST);
+	bzero((dst_ft + SKIP_OR), TO_SET);
 
-	ret_or = strlcpy(dst_or, str_or, size);
-	ret_ft = ft_strlcpy(dst_ft, str_ft, size);
+	ret_or = strlcat(dst_or, str_or, size);
+	ret_ft = ft_strlcat(dst_ft, str_ft, size);
 
 	printf(
 		"== OR ==\n"
-		"ret_or|%lu|\n"
+		"ret_or                  |%lu|\n"
 		"str_or [%p] |%s|\n"
 		"dst_or [%p] |%s|\n"
 		,
@@ -111,7 +134,7 @@ int	main()
 
 	printf(
 		"== FT ==\n"
-		"ret_ft |%lu|\n"
+		"ret_ft                  |%lu|\n"
 		"str_ft [%p] |%s|\n"
 		"dst_ft [%p] |%s|\n"
 		,

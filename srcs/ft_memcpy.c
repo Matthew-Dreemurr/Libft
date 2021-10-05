@@ -51,14 +51,16 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 #include <string.h>
 #include <stdlib.h>
 
+#define TXT "1234test00"
+
 int	main()
 {
 	char	*ret_or = NULL;
-	char	*str_or = strdup("test12345");
-	char	*dst_or = (char *)malloc(strlen(str_or));
+	char	*str_or = strdup(TXT);
+	char	*dst_or = (char *)malloc(strlen(str_or) + 1);
 	char	*ret_ft = NULL;
-	char	*str_ft = strdup("test12345");
-	char	*dst_ft = (char *)malloc(strlen(str_ft));
+	char	*str_ft = strdup(TXT);
+	char	*dst_ft = (char *)malloc(strlen(str_ft) + 1);
 	int		size = 4;
 
 	ret_or = memcpy(dst_or, str_or, size);

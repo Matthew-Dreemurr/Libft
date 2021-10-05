@@ -6,25 +6,25 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 14:52:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/04 15:15:49 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/05 13:06:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 *  LIBRARY
 *       Standard C Library (libc, -lc)
-*  
+*
 *  SYNOPSIS
 *       #include <string.h>
-*  
+*
 *       void *
 *       memmove(void *dst, const void *src, size_t len);
-*  
+*
 *  DESCRIPTION
 *       The memmove() function copies len bytes from string src to string dst.
-        The two strings may overlap; the copy is always done in a
+*       The two strings may overlap; the copy is always done in a
 *       non-destructive manner.
-*  
+*
 *  RETURN VALUES
 *       The memmove() function returns the original value of dst.
 */
@@ -61,14 +61,17 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 #include <string.h>
 #include <stdlib.h>
 
+#define TXT "1234test00"
+
+
 int	main()
 {
 	char	*ret_or = NULL;
-	char	*str_or = strdup("test12345");
-	char	*dst_or = (char *)malloc(strlen(str_or));
+	char	*str_or = strdup(TXT);
+	char	*dst_or = (char *)malloc(strlen(str_or) + 1);
 	char	*ret_ft = NULL;
-	char	*str_ft = strdup("test12345");
-	char	*dst_ft = (char *)malloc(strlen(str_ft));
+	char	*str_ft = strdup(TXT);
+	char	*dst_ft = (char *)malloc(strlen(str_ft) + 1);
 	int		size = 3;
 
 	ret_or = memmove(dst_or, str_or, size);

@@ -3,6 +3,7 @@
 	"autoHide.autoHidePanel": false,
 	"files.associations": {
 		"libft.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"stddef.h": "c"
 	}
 }
