@@ -4,6 +4,7 @@
 	"files.associations": {
 		"libft.h": "c",
 		"stdio.h": "c",
-		"stddef.h": "c"
+		"stddef.h": "c",
+		"__config": "cpp"
 	}
 }
