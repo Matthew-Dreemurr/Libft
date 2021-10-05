@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 16:40:12 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 17:03:30 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/05 17:06:42 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/05 17:10:05 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,31 @@
 *    #include <ctype.h>
 *
 *    int
-*    toupper(int c);
+*    tolower(int c);
 *
 *    #include <ctype.h>
 *    #include <xlocale.h>
 *
 *  DESCRIPTION
-*    The toupper() function converts a lower-case letter to the corresponding
-*    upper-case letter.  The argument must be representable as an unsigned
+*    The tolower() function converts an upper-case letter to the corresponding
+*    lower-case letter.  The argument must be representable as an unsigned
 *    char or the value of EOF.
 *
+*    Although the tolower() function uses the current locale, the tolower_l()
+*    function may be passed a locale directly. See xlocale(3) for more infor-
+*    mation.
+*
 *  RETURN VALUES
-*    If the argument is a lower-case letter, the toupper() function returns
-*    the corresponding upper-case letter if there is one; otherwise, the argu-
+*    If the argument is an upper-case letter, the tolower() function returns
+*    the corresponding lower-case letter if there is one; otherwise, the argu-
 *    ment is returned unchanged.
 */
 
-int ft_toupper(int c)
+int ft_tolower(int c)
 {
 	if (ft_isalpha(c))
-		if (c >= 'a' && c <= 'z')
-			return ((c - 32));
+		if (c >= 'A' && c <= 'Z')
+			return ((c + 32));
 	return (c);
 }
 
@@ -60,8 +64,8 @@ int	main(int ac, char **av)
 	while (*ptr)
 	{
 		printf("char   |%c|\n", *ptr);
-		printf("or_ret |%c|\n", toupper((int)(*ptr)));
-		printf("ft_ret |%c|\n\n", ft_toupper((int)(*ptr)));
+		printf("or_ret |%c|\n", tolower((int)(*ptr)));
+		printf("ft_ret |%c|\n\n", ft_tolower((int)(*ptr)));
 		ptr++;
 	}
 }
