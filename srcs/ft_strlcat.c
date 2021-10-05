@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 17:43:13 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/05 18:26:00 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,31 +64,31 @@ SYNOPSIS
 *  https://github.com/42School/norminette/issues/155#issuecomment-859322078
 */
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict d, const char *restrict s, size_t dstsize)
 {
 	size_t		dst_len;
 	const char	*start_ptr;
 
-	start_ptr = dst;
-	while (dstsize-- && *dst)
-		dst++;
-	dst_len = (size_t)(dst - start_ptr);
+	start_ptr = d;
+	while (dstsize-- && *d)
+		d++;
+	dst_len = (size_t)(d - start_ptr);
 	if (!dstsize)
-		return (dst_len + ft_strlen(src));
+		return (dst_len + ft_strlen(s));
 	dstsize--;
-	start_ptr = src;
-	while (*src)
+	start_ptr = s;
+	while (*s)
 	{
 		if (dstsize)
 		{
-			*dst = *src;
-			dst++;
+			*d = *s;
+			d++;
 			dstsize--;
 		}
-		src++;
+		s++;
 	}
-	*dst = '\0';
-	return ((size_t)(dst_len + (src - start_ptr)));
+	*d = '\0';
+	return ((size_t)(dst_len + (s - start_ptr)));
 }
 
 /*
