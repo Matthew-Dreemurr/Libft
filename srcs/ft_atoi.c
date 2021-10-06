@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 14:34:36 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/06 14:45:50 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,26 @@
 
 int	ft_atoi(const char *str)
 {
-	(void)str;
-	return (12);
+	int	nbr;
+	int	isneg;
+
+	nbr = 0;
+	isneg = 1;
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			isneg = -1;
+		str++;
+	}
+	while (ft_isdigit((int)*str))
+	{
+		nbr *= 10;
+		nbr += (*str - '0');
+		str++;
+	}
+	return ((int)(nbr * isneg));
 }
 
 #include <stdio.h>
@@ -58,7 +76,7 @@ int	main(int ac, char **av)
 	}
 	printf("input >>|%s|\n", av[1]);
 	printf(
-		"or_[%d] vs ft_[%d]\n",
+		"or_[%d]\nft_[%d]\n",
 		atoi(av[1])
 		,ft_atoi(av[1])
 		);
