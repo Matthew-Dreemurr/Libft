@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:16:22 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 13:06:47 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/06 09:16:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ SYNOPSIS
 *    #include <string.h>
 *
 *    size_t
-*    strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
+*    strlcpy(char *  dst, const char *  src, size_t dstsize);
 *
 *    size_t
-*    strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
+*    strlcat(char *  dst, const char *  src, size_t dstsize);
 *
 *  DESCRIPTION
 *    The strlcpy() and strlcat() functions copy and concatenate strings with
@@ -60,7 +60,7 @@ SYNOPSIS
 *    It is the caller's responsibility to handle this.
 */
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len;
 

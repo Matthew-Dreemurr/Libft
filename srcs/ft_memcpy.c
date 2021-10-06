@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:06:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/04 15:09:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/06 09:17:29 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 *       #include <string.h>
 *  
 *       void *
-*       memcpy(void *restrict dst, const void *restrict src, size_t n);
+*       memcpy(void * dst, const void * src, size_t n);
 *  
 *  DESCRIPTION
 *       The memcpy() function copies n bytes from memory area src to memory
@@ -31,7 +31,7 @@
 *       The memcpy() function returns the original value of dst.
 */
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char		*dst_ptr;
 	const unsigned char	*src_ptr;

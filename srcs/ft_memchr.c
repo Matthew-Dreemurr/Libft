@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:08:18 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/05 19:25:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/06 09:17:04 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,22 @@
 *    no such byte exists within n bytes.
 */
 
-#include <stdio.h>
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*ptr;
 
 	ptr = s;
-	while (n)
+	while (n--)
 	{
 		if (*ptr == (char)c)
 			return ((void *)ptr);
-		n--;
 		ptr++;
 	}
-	if (*ptr == (char)c)
-		return ((void *)ptr);
 	return (NULL);
 }
 
+/*
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -64,3 +62,4 @@ int	main(int ac, char **av)
 	printf("or_ [%p]  |%s|\n", ret_or, ret_or);
 	printf("ft_ [%p]  |%s|\n", ret_ft, ret_ft);
 }
+*/
