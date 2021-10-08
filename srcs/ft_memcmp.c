@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 09:19:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 09:36:32 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/08 18:12:05 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *s1_ptr;
-	const unsigned char *s2_ptr;
+	const unsigned char	*s1_ptr;
+	const unsigned char	*s2_ptr;
 
 	s1_ptr = (const unsigned char *)s1;
 	s2_ptr = (const unsigned char *)s2;
@@ -64,8 +64,10 @@ int	main(int ac, char **av)
 		printf("ERROR!\n");
 		return (0);
 	}
-	ret_or = memcmp((const void *)av[1], (const void *)av[2], (size_t)atoi(av[3]));
-	ret_ft = ft_memcmp((const void *)av[1], (const void *)av[2], (size_t)atoi(av[3]));
+	ret_or = memcmp((const void *)av[1], (const void *)av[2],
+		(size_t)atoi(av[3]));
+	ret_ft = ft_memcmp((const void *)av[1], (const void *)av[2],
+		(size_t)atoi(av[3]));
 	printf("or_ |%d|\n", ret_or);
 	printf("ft_ |%d|\n", ret_ft);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/08 17:20:44 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/08 18:10:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	ft_atoi(const char *str)
 	return ((int)(nbr * isneg));
 }
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -94,3 +95,4 @@ int	main(int ac, char **av)
 		,ft_atoi(av[1])
 		);
 }
+*/
