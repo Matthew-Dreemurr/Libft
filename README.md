@@ -24,7 +24,7 @@
 | ft_strnstr       | ✅ |
 | ft_atoi          | ✅ |
 | ft_calloc        | ✅ |
-| ft_strdup        | ❌ |
+| ft_strdup        | ✅ |
 | ft_substr        | ❌ |
 | ft_strjoin       | ❌ |
 | ft_strtrim       | ❌ |
