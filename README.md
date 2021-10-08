@@ -22,8 +22,8 @@
 | ft_memchr        | ✅ |
 | ft_memcmp        | ✅ |
 | ft_strnstr       | ✅ |
-| ft_atoi          | ⚠️ check overflow|
-| ft_calloc        | ❌ |
+| ft_atoi          | ✅ |
+| ft_calloc        | ✅ |
 | ft_strdup        | ❌ |
 | ft_substr        | ❌ |
 | ft_strjoin       | ❌ |

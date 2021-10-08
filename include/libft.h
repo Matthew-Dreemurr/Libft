@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/08 17:10:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/08 17:25:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 /*=={ stdlib.h }==*/
-
+void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *str);
 
 #endif
