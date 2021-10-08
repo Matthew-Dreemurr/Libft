@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/08 18:10:21 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/08 19:35:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@
 * ERRORS
 *   The function atoi() need not affect the value of errno on an error.
 */
+
+//TODO check overflow https://discord.com/channels/@me/760551181596229663/896074350615220264
 
 static int	illegal_val(int sing)
 {
