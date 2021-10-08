@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 14:45:50 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/08 17:20:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,19 @@
 *   The function atoi() need not affect the value of errno on an error.
 */
 
+static int	illegal_val(int sing)
+{
+	if (sing < 0)
+		return (0);
+	else
+		return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	isneg;
+	long	nbr;
+	long	limit;
+	int		isneg;
 
 	nbr = 0;
 	isneg = 1;
@@ -55,8 +64,11 @@ int	ft_atoi(const char *str)
 			isneg = -1;
 		str++;
 	}
+	limit = LONG_MAX / 10;
 	while (ft_isdigit((int)*str))
 	{
+		if (nbr > limit)
+			return (illegal_val(isneg));
 		nbr *= 10;
 		nbr += (*str - '0');
 		str++;
@@ -76,8 +88,9 @@ int	main(int ac, char **av)
 	}
 	printf("input >>|%s|\n", av[1]);
 	printf(
-		"or_[%d]\nft_[%d]\n",
+		"or_[%d]\nst_[%d]\nft_[%d]\n",
 		atoi(av[1])
+		,(int)strtol(av[1], (char **)NULL, 10)
 		,ft_atoi(av[1])
 		);
 }
