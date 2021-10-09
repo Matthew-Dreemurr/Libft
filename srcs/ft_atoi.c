@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 18:04:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/09 21:08:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_atoi(const char *str)
 #include <stdlib.h>
 
 /*
-//TODO CHECK WHY THIS RESULT
+//TODO CHECK WHY THIS RESULT and why the original implementation use unsigned long
 ./a.out 21474836488888
 input >>|21474836488888|
 or_[8888]

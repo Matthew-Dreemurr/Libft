@@ -22,7 +22,7 @@
 | ft_memchr        | ✅ |
 | ft_memcmp        | ✅ |
 | ft_strnstr       | ✅ |
-| ft_atoi          | ✅ |
+| ft_atoi          | ⚠️ |
 | ft_calloc        | ✅ |
 | ft_strdup        | ✅ |
 | ft_substr        | ✅ |
