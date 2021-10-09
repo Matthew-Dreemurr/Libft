@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:20:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 17:42:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/09 18:24:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param set 
  * @return int 
  */
-static int	check_set(char c, char *set)
+static int	check_set(char c, const char *set)
 {
 	while (*set)
 		if (*set++ == c)
@@ -38,8 +38,10 @@ static int	check_set(char c, char *set)
  */
 static char *alloc_init(char const *s1, char const *set)
 {
-	char	*start;
-	char	*end;
+	const char	*start;
+	const char	*end;
+	char		*str;
+	char		*str_ptr;
 
 	start = s1;
 	while (*start && check_set(*start, set))
@@ -47,7 +49,14 @@ static char *alloc_init(char const *s1, char const *set)
 	end = start;
 	while (*end && check_set(*end, set))
 		end++;
-	return ((char *)malloc())//TODO 
+	str = (char *)malloc(((end - start) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str_ptr = str;
+	while (*start && start < end)
+		*str++ = *start++;
+	*str = '\0';
+	return (str_ptr);
 }
 
 /**
@@ -61,7 +70,46 @@ static char *alloc_init(char const *s1, char const *set)
  */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	
-	
-	
+	char	*str;
+
+	str = alloc_init(s1, set);
+	if (!str)
+		return (NULL);
+	return (str);
 }
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(int ac, char **av)
+{
+	char	*str;
+	if (ac != 3)
+	{
+		printf("ERROR\n");
+		return (0);
+	}
+	str = ft_strtrim(av[1], av[2]);
+	if (!str)
+	{
+		printf("NULL!\n");
+		return (0);
+	}
+	else
+		printf(
+			"ft______: [%lu]|%s|\n",
+			strlen (str), str
+		);
+	return (0);
+}
+
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
+//TODO
