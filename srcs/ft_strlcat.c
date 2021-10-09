@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 09:16:04 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/09 14:45:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ size_t	ft_strlcat(char *d, const char *s, size_t dstsize)
 	start_ptr = s;
 	while (*s)
 	{
-		if (dstsize)
+		if (dstsize != 1)
 		{
 			*d = *s;
 			d++;

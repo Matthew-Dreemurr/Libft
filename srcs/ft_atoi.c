@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/08 19:35:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/09 15:19:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,42 +40,30 @@
 *   The function atoi() need not affect the value of errno on an error.
 */
 
-//TODO check overflow https://discord.com/channels/@me/760551181596229663/896074350615220264
-
-static int	illegal_val(int sing)
-{
-	if (sing < 0)
-		return (0);
-	else
-		return (-1);
-}
-
 int	ft_atoi(const char *str)
 {
 	long	nbr;
-	long	limit;
+	long	cutoff;
+	int		cutlim;
 	int		isneg;
 
 	nbr = 0;
-	isneg = 1;
+	isneg = 0;
 	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			isneg = -1;
-		str++;
-	}
-	limit = LONG_MAX / 10;
+	isneg = (*str == '-');
+	str += (isneg || *str == '+');
+	cutoff = (long)(LONG_MAX / 10);
+	cutlim = (int)(LONG_MAX % 10);
 	while (ft_isdigit((int)*str))
 	{
-		if (nbr > limit)
-			return (illegal_val(isneg));
+		if (nbr > cutoff || (nbr == cutoff && (int)(*str - '0') > cutlim))
+			return (-!isneg);
 		nbr *= 10;
 		nbr += (*str - '0');
 		str++;
 	}
-	return ((int)(nbr * isneg));
+	return ((int []){nbr, -nbr}[isneg]);
 }
 
 /*
