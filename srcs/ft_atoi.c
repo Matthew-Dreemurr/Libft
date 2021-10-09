@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 15:19:39 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/09 18:04:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,17 @@ int	ft_atoi(const char *str)
 	return ((int []){nbr, -nbr}[isneg]);
 }
 
-/*
 #include <stdio.h>
 #include <stdlib.h>
+
+/*
+//TODO CHECK WHY THIS RESULT
+./a.out 21474836488888
+input >>|21474836488888|
+or_[8888]
+st_[8888]
+ft_[8888]
+*/
 
 int	main(int ac, char **av)
 {
@@ -85,4 +93,3 @@ int	main(int ac, char **av)
 		,ft_atoi(av[1])
 		);
 }
-*/
