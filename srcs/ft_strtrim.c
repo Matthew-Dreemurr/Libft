@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:20:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/10 10:15:53 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/10 10:57:00 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	const char	*start;
 	const char	*end;
-	const char	*ptr;
+	const char	*end_start;
 	char		*str;
 
 	start = s1;
@@ -67,10 +67,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = start;
 	while (*end)
 	{
-		ptr = end;
-		while (*ptr && check_set(*ptr, set))
-			ptr++;
-		if (!*ptr)
+		end_start = end;
+		while (*end_start && check_set(*end_start, set))
+			end_start++;
+		if (!*end_start)
 			break ;
 		end++;
 	}
