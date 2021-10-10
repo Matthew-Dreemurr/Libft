@@ -6,27 +6,25 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:16:53 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/10 12:23:24 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/10 14:01:03 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * @brief Count the number of word in str + 1 and alloc a tab.
- *        all tab point a NULL pointer.
+ * @brief Count word in `str`.
+ * 
  * @param str 
- * @param c   The separator caracter
+ * @param c 
  * @return size_t 
  */
-static char	**alloc_tab(const char *str, char c)
+static size_t	word_count(const char *str, char c)
 {
 	size_t	size;
-	char	**tab;
 
-	size = 1;
+	size = 0;
 	while (*str)
 	{
 		while (*str && *str == c)
@@ -39,9 +37,25 @@ static char	**alloc_tab(const char *str, char c)
 		if (*str)
 			str++;
 	}
+	return (size);
+}
+
+/**
+ * @brief alloc a tab.
+ *        all tab point a NULL pointer.
+ * @param str 
+ * @param c   The separator caracter
+ * @return size_t 
+ */
+static char	**alloc_tab(const char *str, char c)
+{
+	size_t	size;
+	char	**tab;
+
+	size = word_count(str, c) + 1;
 	tab = (char **)malloc(sizeof(char *) * size);
-		if (!tab)
-			return (NULL);
+	if (!tab)
+		return (NULL);
 	while (--size)
 		tab[size] = NULL;
 	return (tab);
@@ -54,7 +68,7 @@ static char	**alloc_tab(const char *str, char c)
  * @param c
  * @return char* 
  */
-static char *world_dup(const char *str, char c)
+static char	*world_dup(const char *str, char c)
 {
 	void	*ptr;
 	char	*start;
@@ -78,7 +92,7 @@ static char *world_dup(const char *str, char c)
  * @param tab 
  * @return char** Will return `NULL` pointer.
  */
-static char **error_tab_free(char **tab)
+static char	**error_tab_free(char **tab)
 {
 	while (*tab)
 		free(*tab);
@@ -102,45 +116,46 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	char	**ptr;
+	size_t	word;
 
+	word = word_count(s, c);
 	tab = alloc_tab(s, c);
 	if (!tab)
 		return (NULL);
 	ptr = tab;
-	while (*s)
+	while (*s && word--)
 	{
-		printf("*s|%s|\n", s);
-		getchar();
 		while (*s && *s == c)
 			s++;
-		*ptr = world_dup(s, c);
+		if (*s != c)
+			*ptr = world_dup(s, c);
 		if (!*ptr)
 			return (error_tab_free(tab));
-		printf("*ptr|%s|\n", *ptr);
+		while (*s && *s != c)
+			s++;
 		ptr++;
-		s++;
+		if (*s)
+			s++;
 	}
 	*ptr = NULL;
 	return (tab);
 }
 
 /*
-"aaaa.bbb.ccc.dd...eeef...g.ss.....d.."
-"..aaaa.bbb.ccc.dd...eeef...g.ss.....d"
-"..aaaa.bbb.ccc.dd...eeef...g.ss.....d....."
-*/
-
+#include <stdio.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {
-	char **tab;
-	char **ptr;
+	char	**tab;
+	void	*ptr;
 
 	if (ac != 3)
 	{
 		printf("ERROR!\n");
 		return (0);
 	}
+
 	tab = ft_split(av[1], av[2][0]);
 	ptr = tab;
 	if (!tab)
@@ -148,22 +163,22 @@ int	main(int ac, char **av)
 		printf("NULL!\n");
 		return (0);
 	}
-	else
+	else if (*tab)
 	{
 		while (*tab)
 		{
 		printf(
-			"|%s|\n",
+			"[%p]|%s|\n",
+			tab,
 			*tab
 		);
-		tab ++;
+		free (*tab);
+		tab++;
 		}
-		while (*ptr)
-		{
-			free (*ptr);
-			ptr++;
-		}
-		free(ptr);
 	}
+	else if (tab)
+		printf("NULL->[%p]", tab);
+	free(ptr);
 	return (0);
 }
+*/
