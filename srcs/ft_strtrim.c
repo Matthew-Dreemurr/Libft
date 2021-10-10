@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:20:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 18:24:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/10 10:15:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <stdlib.h>
 
 /**
- * @brief 
+ * @brief Check if the carater is in the set.
  * 
- * @param c 
- * @param set 
- * @return int 
+ * @param c
+ * @param set
+ * @return int return `1` if find `0` if not.
  */
 static int	check_set(char c, const char *set)
 {
@@ -29,34 +29,20 @@ static int	check_set(char c, const char *set)
 }
 
 /**
- * @brief Skip `set` from the beginning and the end of the string
- *        and alloc (trim + 1).
- *
- * @param s1  The string.
- * @param set The caracters to skip.
- * @return char* Pointer to the allocate memory.
+ * @brief Copy form `start` to `end`
+ * 
+ * @param str
+ * @param start
+ * @param end
  */
-static char *alloc_init(char const *s1, char const *set)
+static void	cpystarttoend(char **str, const char *start, const char *end)
 {
-	const char	*start;
-	const char	*end;
-	char		*str;
-	char		*str_ptr;
+	char	*ptr;
 
-	start = s1;
-	while (*start && check_set(*start, set))
-		start++;
-	end = start;
-	while (*end && check_set(*end, set))
-		end++;
-	str = (char *)malloc(((end - start) + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str_ptr = str;
+	ptr = *str;
 	while (*start && start < end)
-		*str++ = *start++;
-	*str = '\0';
-	return (str_ptr);
+		*ptr++ = *start++;
+	*ptr = '\0';
 }
 
 /**
@@ -70,16 +56,34 @@ static char *alloc_init(char const *s1, char const *set)
  */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	const char	*start;
+	const char	*end;
+	const char	*ptr;
+	char		*str;
 
-	str = alloc_init(s1, set);
+	start = s1;
+	while (*start && check_set(*start, set))
+		start++;
+	end = start;
+	while (*end)
+	{
+		ptr = end;
+		while (*ptr && check_set(*ptr, set))
+			ptr++;
+		if (!*ptr)
+			break ;
+		end++;
+	}
+	str = (char *)malloc(((end - start) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
+	cpystarttoend(&str, start, end);
 	return (str);
 }
 
-#include <stdio.h>
+/*
 #include <string.h>
+#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -102,14 +106,4 @@ int	main(int ac, char **av)
 		);
 	return (0);
 }
-
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
+*/
