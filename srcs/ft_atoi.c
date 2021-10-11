@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 21:08:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:49:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@
 
 int	ft_atoi(const char *str)
 {
-	long	nbr;
-	long	cutoff;
-	int		cutlim;
-	int		isneg;
+	unsigned long	nbr;
+	unsigned long	cutoff;
+	int				cutlim;
+	int				isneg;
 
 	nbr = 0;
 	isneg = 0;
@@ -53,7 +53,7 @@ int	ft_atoi(const char *str)
 		str++;
 	isneg = (*str == '-');
 	str += (isneg || *str == '+');
-	cutoff = (long)(LONG_MAX / 10);
+	cutoff = (unsigned long)(LONG_MAX / 10);
 	cutlim = (int)(LONG_MAX % 10);
 	while (ft_isdigit((int)*str))
 	{
@@ -66,17 +66,9 @@ int	ft_atoi(const char *str)
 	return ((int []){nbr, -nbr}[isneg]);
 }
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
-
-/*
-//TODO CHECK WHY THIS RESULT and why the original implementation use unsigned long
-./a.out 21474836488888
-input >>|21474836488888|
-or_[8888]
-st_[8888]
-ft_[8888]
-*/
 
 int	main(int ac, char **av)
 {
@@ -92,4 +84,4 @@ int	main(int ac, char **av)
 		,(int)strtol(av[1], (char **)NULL, 10)
 		,ft_atoi(av[1])
 		);
-}
+}*/
