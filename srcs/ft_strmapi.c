@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:57:37 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/11 17:29:44 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/12 13:50:24 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 /*
 #include <stdio.h>
+#include <stdlib.h>
 
 char	char_plusplus(unsigned int i, char x)
 {
