@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:38:40 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/12 16:43:13 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/12 17:10:09 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ptr;
 
+	if (!content)
+		return (NULL);
 	ptr = malloc(sizeof(t_list));
 	if (!ptr)
 		return (NULL);
