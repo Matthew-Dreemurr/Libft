@@ -1,12 +1,4 @@
 {
 	"autoHide.autoHideSideBar": false,
-	"autoHide.autoHidePanel": false,
-	"files.associations": {
-		"libft.h": "c",
-		"stdio.h": "c",
-		"stddef.h": "c",
-		"__config": "cpp",
-		"cstdlib": "cpp",
-		"limits.h": "c"
-	}
+	"autoHide.autoHidePanel": false
 }

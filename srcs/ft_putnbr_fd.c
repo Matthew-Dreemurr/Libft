@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:10:23 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/12 14:35:40 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 14:36:04 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/12 15:10:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
 /**
- * @brief Outputs the string ’s’ to the given file
- *        descriptor, followed by a newline.
+ * @brief 
  * 
- * @param s  The string to output.
+ * @param n  The integer to output.
  * @param fd The file descriptor on which to write.
  */
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (!s || fd < 0)
+	char	*ptr;
+
+	if (fd < 0)
 		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	ptr = ft_itoa(n);
+	if (!ptr)
+		return ;
+	ft_putstr_fd(ptr, fd);
 }
 
 /*
@@ -37,7 +40,8 @@ int	main(int c, char **v)
 		ft_putstr_fd("ERROR!\n", 1);
 		return (1);
 	}
-	ft_putendl_fd(v[1], (int)strtol(v[2], (char **)NULL, 10));
+	ft_putnbr_fd((int)strtol(v[1], (char **)NULL, 10),
+							(int)strtol(v[2], (char **)NULL, 10));
 	return (0);
 }
 */
