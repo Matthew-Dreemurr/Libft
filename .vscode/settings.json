@@ -1,4 +1,7 @@
 {
 	"autoHide.autoHideSideBar": false,
-	"autoHide.autoHidePanel": false
+	"autoHide.autoHidePanel": false,
+	"files.associations": {
+		"stdlib.h": "c"
+	}
 }
