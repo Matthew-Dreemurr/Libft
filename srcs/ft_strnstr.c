@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:01:54 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 11:08:45 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 17:25:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@
 *    character of the first occurrence of needle is returned.
 */
 
+#include <stdio.h>
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	const char	*start;
 
 	start = needle;
-	if (!(*needle))
+	if (!(*needle) || ((long)len) < 0) //TODO check why negatif number F*ckt Up
 		return ((char *)haystack);
+		printf("|%lu|\n", len);
 	while (*haystack && len)
 	{
 		if (*haystack == *needle)
@@ -59,8 +61,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 
 /*
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 int	main(int ac, char **av)
@@ -79,3 +79,28 @@ int	main(int ac, char **av)
 	printf("ft_ [%p] |%s|\n", ret_ft, ret_ft);
 }
 */
+#include <string.h>
+
+int main()
+{
+
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	char * empty = (char*)"";
+	
+	setbuf(stdout, NULL);
+
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, needle, 0),ft_strnstr(haystack, needle, 0));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, needle, -1),ft_strnstr(haystack, needle, -1));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "a", -1),ft_strnstr(haystack, "a", -1));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "c", -1),ft_strnstr(haystack, "c", -1));
+	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "", -1),ft_strnstr(empty, "", -1));
+	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "", 0),ft_strnstr(empty, "", 0));
+	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "coucou", -1),ft_strnstr(empty, "coucou", -1));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "aaabc", 5),ft_strnstr(haystack, "aaabc", 5));
+	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "12345", 5),ft_strnstr(empty, "12345", 5));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "abcd", 9),ft_strnstr(haystack, "abcd", 9));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "cd", 8),ft_strnstr(haystack, "cd", 8));
+	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "a", 1),ft_strnstr(haystack, "a", 1));
+	return (0);
+}
