@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:40:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 10:00:59 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:39:24 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 /**
- * @brief Takes as a parameter an element and frees thememory of the element’s
+ * @brief Takes as a parameter an element and frees the memory of the element’s
  *        content using the function ’del’ given as a parameter and free the
  *        element.
  *        The memory of ’next’ must not be freed.
@@ -27,5 +27,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	if (!del || !lst)
 		return ;
 	del(lst->content);
-	free(lst->content);
+	free(lst);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:02:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 10:09:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:43:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	if (!lst || !del)
 		return ;
 	ptr = *lst;
-	while (ptr)
+	while (*lst)
 	{
-		ft_lstdelone(ptr, del);
-		ptr = ptr->next;
+		ptr = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = ptr;
 	}
 }
