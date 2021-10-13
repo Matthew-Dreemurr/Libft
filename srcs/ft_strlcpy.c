@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:16:22 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 09:16:12 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 14:45:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 
 	len = ft_strlen(src);
+	if (!dstsize)
+		return (len);
 	while (*src && dstsize > 1)
 	{
 		*dst = *src;

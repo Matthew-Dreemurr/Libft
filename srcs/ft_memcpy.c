@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:06:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/06 09:17:29 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 14:28:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*dst_ptr;
 	const unsigned char	*src_ptr;
 
+	if (!dst && !src)
+		return (NULL);
 	dst_ptr = (unsigned char *)dst;
 	src_ptr = (unsigned const char *)src;
 	while (n > 0)

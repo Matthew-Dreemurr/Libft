@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 14:20:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 16:27:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:28:02 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	char	*str_ptr;
 
-	if (!s || start < 0)
+	if (start < 0)
 		return (NULL);
-	len_alloc = ft_strlen(&(s[start]));
+	s += start;
+	len_alloc = ft_strlen(s);
 	str = (char *)malloc((len_alloc + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -42,7 +43,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-/*
 #include <stdio.h> //TODO REMOVE
 
 int	main(int ac, char **av)
@@ -69,4 +69,3 @@ int	main(int ac, char **av)
 		);
 	return (0);
 }
-*/

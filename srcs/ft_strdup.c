@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:57:34 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/08 18:09:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:18:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ char	*ft_strdup(const char *s1)
 	char	*ret;
 	char	*start;
 
-	if (!s1)
-		return (NULL);
 	ret = (char *)malloc((md_strlen(s1) + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);

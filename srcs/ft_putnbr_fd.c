@@ -6,11 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:36:04 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/12 15:10:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:11:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
+#include <unistd.h>
 
 /**
  * @brief 
@@ -20,14 +21,25 @@
  */
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
+	char tmp;
 
-	if (fd < 0)
-		return ;
-	ptr = ft_itoa(n);
-	if (!ptr)
-		return ;
-	ft_putstr_fd(ptr, fd);
+	if (n == INT_MIN)
+		write(fd, "-2147483648", 11);
+	else
+	{
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n *= -1;
+		}
+		tmp = 0;
+		tmp = n % 10;
+		tmp += '0';
+		n /= 10;
+		if (n > 0)
+			ft_putnbr_fd(n, fd);
+		write(fd, &tmp, 1);
+	}
 }
 
 /*

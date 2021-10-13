@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:37:57 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/04 12:05:06 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 13:40:43 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@
 *       returns non-zero if the character tests true.
 */
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
 	return ((c >= ' ') && (c <= '~'));
 }
