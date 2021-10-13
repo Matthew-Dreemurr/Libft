@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:21:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 11:29:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:44:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  *            if needed.
  * @return t_list* The new list.  NULL if the allocation fails.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*ret;
 	t_list	*ret_start;

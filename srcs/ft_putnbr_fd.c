@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:36:04 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 15:11:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:47:50 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 void	ft_putnbr_fd(int n, int fd)
 {
-	char tmp;
+	char	tmp;
 
 	if (n == INT_MIN)
 		write(fd, "-2147483648", 11);

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 14:20:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 16:01:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:48:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
+/**
 #include <stdio.h> //TODO REMOVE
 
 int	main(int ac, char **av)
@@ -71,3 +72,4 @@ int	main(int ac, char **av)
 		);
 	return (0);
 }
+*/

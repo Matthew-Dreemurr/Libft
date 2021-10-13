@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:08:18 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 14:40:05 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:45:10 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
 
-	ptr = (unsigned char*)s;
+	ptr = (unsigned char *)s;
 	while (n--)
 	{
 		if (*ptr == (unsigned char)c)
