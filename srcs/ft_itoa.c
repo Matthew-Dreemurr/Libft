@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:30:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 14:58:46 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:07:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char	*ft_itoa(int n)
 	*str++ = (char []){'\0', '-'}[n < 0];
 	*str++ = '\0';
 	str = (char *)malloc(sizeof(char) * ft_strlen(buff) + 1);
+	if (!str)
+		return (NULL);
 	revcpy(str, buff);
 	return (str);
 }

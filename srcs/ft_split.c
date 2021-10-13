@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:16:53 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/10 14:01:03 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:06:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 /**
  * @brief Count word in `str`.
  * 
- * @param str 
- * @param c 
- * @return size_t 
+ * @param str
+ * @param c
+ * @return size_t
  */
 static size_t	word_count(const char *str, char c)
 {
@@ -52,6 +52,8 @@ static char	**alloc_tab(const char *str, char c)
 	size_t	size;
 	char	**tab;
 
+	if (!str)
+		return (NULL);
 	size = word_count(str, c) + 1;
 	tab = (char **)malloc(sizeof(char *) * size);
 	if (!tab)
@@ -66,7 +68,7 @@ static char	**alloc_tab(const char *str, char c)
  * 
  * @param str
  * @param c
- * @return char* 
+ * @return char*
  */
 static char	*world_dup(const char *str, char c)
 {
@@ -118,11 +120,11 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	size_t	word;
 
-	word = word_count(s, c);
 	tab = alloc_tab(s, c);
 	if (!tab)
 		return (NULL);
 	ptr = tab;
+	word = word_count(s, c);
 	while (*s && word--)
 	{
 		while (*s && *s == c)

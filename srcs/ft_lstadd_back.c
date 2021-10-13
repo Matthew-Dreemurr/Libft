@@ -6,11 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:30:30 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/12 17:39:19 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:35:19 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
+
 /**
  * @brief Adds the element ’new’ at the end of the list.
  * 
@@ -21,10 +22,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*end;
 
-	if (!lst | !*lst | !new)
+	if (!lst || !new)
 		return ;
 	end = ft_lstlast(*lst);
-	end->next = new;
+	if (!end)
+		*lst = new;
+	else
+		end->next = new;
 }
 
 /*

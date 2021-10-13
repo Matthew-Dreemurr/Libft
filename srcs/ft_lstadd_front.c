@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:12:49 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 10:03:46 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:09:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  */
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (!alst | !*alst | !new)
+	if (!alst | !new)
 		return ;
 	new->next = *alst;
 	*alst = new;

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 16:28:33 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/09 17:42:06 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:02:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ret;
 	char	*ret_ptr;
 
+	if (!s1 || !s2)
+		return (NULL);
 	ret = alloc_init(s1, s2);
 	if (!ret)
 		return (NULL);
