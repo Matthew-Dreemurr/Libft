@@ -69,11 +69,12 @@ OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
 
 all: $(NAME)
-	ar -rcs $(NAME) $(OBJS)
+
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(FLAGS) -I include -c $< -o $@
 
 $(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
