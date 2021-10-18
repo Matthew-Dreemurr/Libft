@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/12 13:24:29 by mahadad           #+#    #+#             */
+/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/**
+ * @brief Applies the function f to each character of the
+ *        string passed as argument, and passing its index
+ *        as first argument. Each character is passed by
+ *        address to f to be modified if necessary
+ * 
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character.
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+		f(i++, s);
+}
+
+/*
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+char	char_plusplus(unsigned int i, char *x)
+{
+	printf("x[%2u]:|%c|", i, x[i]);
+	x[i]++;
+	printf(" -> |%c|\n", x[i]);
+	return (x[i]);
+}
+
+
+int	main(void)
+{
+	void	*f = char_plusplus;
+	char	*str = strdup("0123456abcdefg");
+
+	ft_striteri(str, f);
+	if (!str)
+	{
+		printf("NULL!\n");
+		return (0);
+	}
+	printf("|%s|\n", str);
+	free(str);
+	return (0);
+}
+*/
