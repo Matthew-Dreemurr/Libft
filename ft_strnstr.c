@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:01:54 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/18 16:09:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,39 @@
 *    character of the first occurrence of needle is returned.
 */
 
-#include <stdio.h>
+static size_t	fk_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	if (s)
+		while (s[i])
+			i++;
+	return (i);
+}
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char	*start;
+	char	*ret;
+	size_t	i;
+	size_t	hay_len;
+	size_t	nee_len;
 
-	start = needle;
-	if (!(*needle) || ((long)len) < 0) //TODO check why negatif number F*ckt Up
-		return ((char *)haystack);
-		printf("|%lu|\n", len);
-	while (*haystack && len)
+	hay_len = fk_strlen(haystack);
+	nee_len = fk_strlen(needle);
+	ret = (char *)haystack;
+	i = 0;
+	if (!nee_len)
+		return (ret);
+	if (hay_len < nee_len || !hay_len)
+		return (NULL);
+	while (*ret && nee_len <= len)
 	{
-		if (*haystack == *needle)
-		{
-			needle++;
-			if (!(*needle))
-				return ((char *)(haystack - ((needle - 1) - start)));
-		}
-		else
-			needle = start;
-		haystack++;
+		if (!ft_strncmp(haystack + i, needle, nee_len))
+			return (ret);
+		ret++;
 		len--;
+		i++;
 	}
 	return (NULL);
 }
@@ -79,28 +91,3 @@ int	main(int ac, char **av)
 	printf("ft_ [%p] |%s|\n", ret_ft, ret_ft);
 }
 */
-#include <string.h>
-
-int main()
-{
-
-	char haystack[30] = "aaabcabcd";
-	char needle[10] = "aabc";
-	char * empty = (char*)"";
-	
-	setbuf(stdout, NULL);
-
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, needle, 0),ft_strnstr(haystack, needle, 0));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, needle, -1),ft_strnstr(haystack, needle, -1));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "a", -1),ft_strnstr(haystack, "a", -1));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "c", -1),ft_strnstr(haystack, "c", -1));
-	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "", -1),ft_strnstr(empty, "", -1));
-	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "", 0),ft_strnstr(empty, "", 0));
-	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "coucou", -1),ft_strnstr(empty, "coucou", -1));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "aaabc", 5),ft_strnstr(haystack, "aaabc", 5));
-	printf("or|%s|\nft|%s|\n\n", strnstr(empty, "12345", 5),ft_strnstr(empty, "12345", 5));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "abcd", 9),ft_strnstr(haystack, "abcd", 9));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "cd", 8),ft_strnstr(haystack, "cd", 8));
-	printf("or|%s|\nft|%s|\n\n", strnstr(haystack, "a", 1),ft_strnstr(haystack, "a", 1));
-	return (0);
-}
