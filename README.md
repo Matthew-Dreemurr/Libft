@@ -21,7 +21,7 @@
 | ft_strncmp       | ✅ |
 | ft_memchr        | ✅ |
 | ft_memcmp        | ✅ |
-| ft_strnstr       | ✅ |
+| ft_strnstr       | ⚠️ |
 | ft_atoi          | ✅ |
 | ft_calloc        | ✅ |
 | ft_strdup        | ✅ |
@@ -36,13 +36,13 @@
 | ft_putstr_fd     | ✅ |
 | ft_putendl_fd    | ✅ |
 | ft_putnbr_fd     | ✅ |
-| **BONUS**        | ✅ |
+| **BONUS**        |   |
 | ft_lstnew        | ✅ |
 | ft_lstadd_front  | ✅ |
 | ft_lstsize       | ✅ |
 | ft_lstlast       | ✅ |
 | ft_lstadd_back   | ✅ |
-| ft_lstdelone     | ❌ |
-| ft_lstclear      | ❌ |
-| ft_lstiter       | ❌ |
-| ft_lstmap        | ❌ |
+| ft_lstdelone     | ✅ |
+| ft_lstclear      | ✅ |
+| ft_lstiter       | ✅ |
+| ft_lstmap        | ✅ |
