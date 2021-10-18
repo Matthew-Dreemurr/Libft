@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:21:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/18 16:46:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	/*
 	t_list	*ret;
 	t_list	*ret_start;
 
@@ -35,17 +36,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!ret)
 		return (NULL);
 	ret_start = ret;
-	while (lst)
+	while (lst && ret)
 	{
-		lst = lst->next;
 		ret->next = ft_lstnew(f(lst->content));
 		if (!ret->next)
 		{
 			del(ret);
 			return (NULL);
 		}
+		lst = lst->next;
 		ret = ret->next;
 	}
 	ret->next = NULL;
 	return (ret_start);
+*/
 }

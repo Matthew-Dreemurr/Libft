@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:24:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/18 16:26:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	i = 0;
 	while (s[i])
-		f(i++, s);
+	{
+		f(i, &(s[i]));
+		i++;
+	}
 }
 
 /*
