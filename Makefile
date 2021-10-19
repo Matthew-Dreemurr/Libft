@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/10/18 15:14:52 by mahadad          ###   ########.fr        #
+#    Updated: 2021/10/19 14:51:02 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,13 +79,15 @@ $(NAME): $(OBJS)
 
 bonus: $(OBJS) $(OBJS_B)
 	ar -rcs $(NAME) $(OBJS) $(OBJS_B)
+	touch bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
+	rm -f bonus
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all, clean, fclean, re
