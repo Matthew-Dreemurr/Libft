@@ -6,11 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:21:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/19 15:40:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/19 15:57:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /**
  * @brief Iterates the list ’lst’ and applies the function ’f’ to the content
@@ -28,7 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*ret;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (NULL);
 	ret = ft_lstnew((f(lst->content)));
 	if (!ret)
@@ -38,7 +39,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ret->next = ft_lstmap(lst->next, f, del);
 		if (!ret->next)
 		{
-			del(ret);
+			del(ret->content);
+			free(ret);
 			return (NULL);
 		}
 	}
