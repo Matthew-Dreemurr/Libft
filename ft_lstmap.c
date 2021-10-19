@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:21:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/19 15:07:49 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/19 15:40:02 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	ret = ft_lstnew((f(lst->content)));
 	if (!ret)
-	{
-		del(ret);
 		return (NULL);
+	if (lst->next)
+	{
+		ret->next = ft_lstmap(lst->next, f, del);
+		if (!ret->next)
+		{
+			del(ret);
+			return (NULL);
+		}
 	}
-	ret->next = ft_lstmap(lst->next, f, del);
 	return (ret);
 }
 
@@ -69,6 +74,7 @@ int main(void)
 		tmp = tmp->next;
 	}
 	tmp = m;
+	printf("listret:%p\n", tmp);
 	for (int i = 0; i < 4; ++i)
 	{
 		printf("ft_[%d]vs[%d]\n", *(int*)tmp->content, i + 1);
@@ -77,4 +83,5 @@ int main(void)
 	freeList(l); ft_lstclear(&m, free);
 	write(1, "\n", 1);
 	return (0);
-}*/
+}
+*/
