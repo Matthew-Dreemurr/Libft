@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/13 13:55:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/19 17:20:45 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,3 +86,11 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
 
 #endif
+
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
+TODOTODOTODOTODO NORM
