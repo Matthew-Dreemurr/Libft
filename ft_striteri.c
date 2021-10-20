@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:24:29 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 16:26:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,34 +34,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-char	char_plusplus(unsigned int i, char *x)
-{
-	printf("x[%2u]:|%c|", i, x[i]);
-	x[i]++;
-	printf(" -> |%c|\n", x[i]);
-	return (x[i]);
-}
-
-
-int	main(void)
-{
-	void	*f = char_plusplus;
-	char	*str = strdup("0123456abcdefg");
-
-	ft_striteri(str, f);
-	if (!str)
-	{
-		printf("NULL!\n");
-		return (0);
-	}
-	printf("|%s|\n", str);
-	free(str);
-	return (0);
-}
-*/

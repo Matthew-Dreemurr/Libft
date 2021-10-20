@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:30:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 11:11:09 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:13 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,3 @@ char	*ft_itoa(int n)
 	rev_cpy(str, buff);
 	return (str);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int ac, char **av)
-{
-	setbuf(stdout, NULL);
-	if (ac != 2)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	printf("|%s|\n", ft_itoa((int)strtol(av[1], (char **)NULL, 10)));
-	
-}
-*/

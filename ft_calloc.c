@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:21:18 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,44 +49,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(mem, count * size);
 	return (mem);
 }
-
-/*
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	char	*ft_test;
-	char	*or_test;
-	if (ac != 3)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	size_t	count = strtoul(av[1], (char **)NULL, 10);
-	size_t	size = strtoul(av[2], (char **)NULL, 10);
-	
-	ft_test = NULL;
-	printf("ft_aft_test [%p]\n", ft_test);
-	ft_test = ft_calloc(count, size);
-	printf("ft_bef_test [%p]\n", ft_test);
-
-	or_test = NULL;
-	printf("or_aft_test [%p]\n", or_test);
-	or_test = calloc(count, size);
-	printf("or_bef_test [%p]\n", or_test);
-
-	for (size_t i = 0 ; i < (count*size) ; i++)
-	{
-		printf(
-				"ft_test[%lu] = |%d| VS ",
-				i,
-				ft_test[i]
-		);
-		printf(
-				"or_test[%lu] = |%d|\n",
-				i,
-				or_test[i]
-		);
-	}
-}
-*/

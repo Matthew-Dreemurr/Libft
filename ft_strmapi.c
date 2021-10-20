@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:57:37 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,31 +41,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	*str_p = '\0';
 	return (str);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-char	char_plusplus(unsigned int i, char x)
-{
-	printf("i:%d x:|%c|\n", i, x);
-	return (++x);
-}
-
-
-int	main(void)
-{
-	void	*f = char_plusplus;
-	char	*str;
-
-	str = ft_strmapi("abcdef123456", f);
-	if (!str)
-	{
-		printf("NULL!\n");
-		return (0);
-	}
-	printf("|%s|\n", str);
-	free(str);
-	return (0);
-}
-*/

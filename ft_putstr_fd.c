@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,3 @@ void	ft_putstr_fd(char *s, int fd)
 	while (*s)
 		write(fd, &(*s++), sizeof(char));
 }
-
-/*
-#include <stdlib.h>
-
-int	main(int c, char **v)
-{
-	if (c != 3)
-	{
-		ft_putstr_fd("ERROR!\n", 1);
-		return (1);
-	}
-	ft_putstr_fd(v[1], (int)strtol(v[2], (char **)NULL, 10));
-	return (0);
-}
-*/

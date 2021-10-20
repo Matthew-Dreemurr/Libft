@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:06:42 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,3 @@ int	ft_tolower(int c)
 			return ((c + 32));
 	return (c);
 }
-
-/*
-#include <stdio.h>
-#include <ctype.h>
-
-// examples: ./a.out "SaLuCoMmentCaVa@(=}["
-int	main(int ac, char **av)
-{
-	char *ptr;
-
-	if (ac != 2)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	av++;
-	ptr = *av;
-	while (*ptr)
-	{
-		printf("char   |%c|\n", *ptr);
-		printf("or_ret |%c|\n", tolower((int)(*ptr)));
-		printf("ft_ret |%c|\n\n", ft_tolower((int)(*ptr)));
-		ptr++;
-	}
-}
-*/

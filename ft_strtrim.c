@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:20:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 11:10:28 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,30 +79,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	cpy_start_to_end(str, start, end);
 	return (str);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	char	*str;
-	if (ac != 3)
-	{
-		printf("ERROR\n");
-		return (0);
-	}
-	str = ft_strtrim(av[1], av[2]);
-	if (!str)
-	{
-		printf("NULL!\n");
-		return (0);
-	}
-	else
-		printf(
-			"ft______: [%lu]|%s|\n",
-			strlen (str), str
-		);
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:36:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:34 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((int)((unsigned char)*s1 - (unsigned char)*s2));
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(int ac, char **av)
-{
-	int	ret_or;
-	int	ret_ft;
-
-	if (ac != 4)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	ret_or = strncmp(av[1], av[2], atoi(av[3]));
-	ret_ft = ft_strncmp(av[1], av[2], atoi(av[3]));
-	printf("or_ [%d]\n", ret_or);
-	printf("ft_ [%d]\n", ret_ft);
-}
-*/

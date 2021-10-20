@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:20:58 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:20 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,3 @@ void	ft_putchar_fd(char c, int fd)
 		return ;
 	write(fd, &c, sizeof(char));
 }
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-
-int	main(int c, char **v)
-{
-	if (c != 3)
-	{
-		printf("ERROR!\n");
-		return (1);
-	}
-	ft_putchar_fd(v[1][0], (int)strtol(v[2], (char **)NULL, 10));
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 09:19:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-int	main(int ac, char **av)
-{
-	int	ret_or;
-	int	ret_ft;
-
-	if (ac != 4)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	ret_or = memcmp((const void *)av[1], (const void *)av[2],
-		(size_t)atoi(av[3]));
-	ret_ft = ft_memcmp((const void *)av[1], (const void *)av[2],
-		(size_t)atoi(av[3]));
-	printf("or_ |%d|\n", ret_or);
-	printf("ft_ |%d|\n", ret_ft);
-}
-*/

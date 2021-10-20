@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:23:14 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:15 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,3 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-
-int	main()
-{
-	t_list	*list;
-	int		c = 12;
-	setbuf(stdout, NULL);
-
-	list = ft_lstnew(&c);
-	for (int i = 10; i > 0; i--)
-	{
-		printf("list No:%2d |%p|\n", i, list);
-		ft_lstadd_front(&list, ft_lstnew(&c));
-	}
-	printf("last list: |%p|\n", ft_lstlast(list));
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:10:23 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-
-/*
-#include <stdlib.h>
-
-int	main(int c, char **v)
-{
-	if (c != 3)
-	{
-		ft_putstr_fd("ERROR!\n", 1);
-		return (1);
-	}
-	ft_putendl_fd(v[1], (int)strtol(v[2], (char **)NULL, 10));
-	return (0);
-}
-*/

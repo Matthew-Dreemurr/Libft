@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 16:28:33 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,32 +61,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*ret = '\0';
 	return (ret_ptr);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(int ac, char **av)
-{
-	char	*str;
-	if (ac != 3)
-	{
-		printf("ERROR\n");
-		return (0);
-	}
-	str = ft_strjoin(av[1], av[2]);
-	if (!str)
-	{
-		printf("NULL!\n");
-		return (0);
-	}
-	else
-		printf(
-			"expected: [%lu]|%s%s|\n"
-			"ft______: [%lu]|%s|\n",
-			strlen(av[1]) + strlen(av[2]), av[1], av[2],
-			strlen (str), str
-		);
-	return (0);
-}
-*/

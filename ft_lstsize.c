@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:08:15 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 11:05:53 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:17 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (len);
 }
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-
-int	main()
-{
-	t_list	*list;
-	int		c = 12;
-	setbuf(stdout, NULL);
-
-	list = ft_lstnew(&c);
-	for (int i = 0; i < 10; i++)
-		ft_lstadd_front(&list, ft_lstnew(&c));
-	printf("len: |%d|\n", ft_lstsize(list));
-	return (0);
-}
-*/

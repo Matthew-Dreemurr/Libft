@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:57:34 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 11:14:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:04 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,36 +60,3 @@ char	*ft_strdup(const char *s1)
 	*ret = '\0';
 	return (start);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char	*str1;
-	char	*str2;
-
-	if (ac != 2)
-	{
-		printf("ERROR\n");
-		return (0);
-	}
-	str1 = ft_strdup(av[1]);
-	str2 = strdup(av[1]);
-	if (str1)
-	{
-		printf("ft_[%lu]|%s|\n",strlen(str1), str1);
-		free(str1);
-	}
-	else
-		printf("ft_NULL!\n");
-	if (str2)
-	{
-		printf("or_[%lu]|%s|\n",strlen(str2), str2);
-		free(str2);
-	}
-	else
-		printf("or_NULL!\n");
-	return (0);
-}
-*/

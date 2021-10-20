@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:34:20 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:13 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,3 @@ int	ft_isalpha(int c)
 {
 	return (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')));
 }
-
-/*
-#include <stdio.h>
-
-int main()
-{
-	printf("Ret:|%d|\n", isalpha('a'));
-	printf("Ret:|%d|\n", isalpha('A'));
-	printf("Ret:|%d|\n", isalpha('c'));
-	printf("Ret:|%d|\n", isalpha('Z'));
-	printf("Ret:|%d|\n", isalpha('2'));
-	printf("Ret:|%d|\n", isalpha('*'));
-}
-*/

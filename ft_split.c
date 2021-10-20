@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:16:53 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:40:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,17 @@ static char	*world_dup(const char *str, char c)
  */
 static char	**error_tab_free(char **tab)
 {
+	char	start;
+
+	if (!tab)
+		return (NULL);
+	start = tab;
 	while (*tab)
+	{
 		free(*tab);
-	if (*tab)
-		free (tab);
+		tab++;
+	}
+	free (start);
 	return (NULL);
 }
 
@@ -142,45 +149,3 @@ char	**ft_split(char const *s, char c)
 	*ptr = NULL;
 	return (tab);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(int ac, char **av)
-{
-	char	**tab;
-	void	*ptr;
-
-	if (ac != 3)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-
-	tab = ft_split(av[1], av[2][0]);
-	ptr = tab;
-	if (!tab)
-	{
-		printf("NULL!\n");
-		return (0);
-	}
-	else if (*tab)
-	{
-		while (*tab)
-		{
-		printf(
-			"[%p]|%s|\n",
-			tab,
-			*tab
-		);
-		free (*tab);
-		tab++;
-		}
-	}
-	else if (tab)
-		printf("NULL->[%p]", tab);
-	free(ptr);
-	return (0);
-}
-*/

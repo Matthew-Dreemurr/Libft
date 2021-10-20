@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:38:40 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,3 @@ t_list	*ft_lstnew(void *content)
 	ptr->next = NULL;
 	return (ptr);
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	t_list	**list = malloc(sizeof(t_list *) * 3);
-	int		int_ = 11;
-	long	long_ = 22;
-	char	*str = "test 1 2";
-
-	list[0] = ft_lstnew(&int_);
-	list[1] = ft_lstnew(&long_);
-	list[2] = ft_lstnew(str);
-
-	printf("uint   :%d\n", *(int *)(list[0]->content));
-	printf("ulong  :%ld\n", *(long *)(list[1]->content));
-	printf("char*  :%s\n", (char *)(list[2]->content));
-	for (int i = 0; i < 3; i++)
-		printf("[%p]\n", list[i]->next);
-	return (0);
-}
-*/

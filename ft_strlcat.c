@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:17 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,64 +92,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	*d = '\0';
 	return (dlen + (s - src));
 }
-
-/*
-//gcc -Wall -Wextra -Werror ft_strlcat.c ft_strlen.c  && ./a.out
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-#define DST "12345#############################"
-#define SRC "abcde"
-#define SZE 11
-
-#define SKIP_OR 5  //number char to skip
-#define TO_SET  30 //number of `\0` to place after `SKIP_OR`
-
-int	main()
-{
-	size_t	size = SZE;
-	
-	size_t	ret_or = 0;
-	char	*str_or = strdup(SRC);
-	char	*dst_or = strdup(DST);
-	bzero((dst_or + SKIP_OR), TO_SET); // to remove `#`
-	
-	size_t	ret_ft = 0;
-	char	*str_ft = strdup(SRC);
-	char	*dst_ft = strdup(DST);
-	bzero((dst_ft + SKIP_OR), TO_SET);
-
-	ret_or = strlcat(dst_or, str_or, size);
-	ret_ft = ft_strlcat(dst_ft, str_ft, size);
-
-	printf(
-		"== OR ==\n"
-		"ret_or                  |%lu|\n"
-		"str_or [%p] |%s|\n"
-		"dst_or [%p] |%s|\n"
-		,
-		ret_or,
-		str_or, str_or,
-		dst_or, dst_or
-		);
-
-	printf(
-		"== FT ==\n"
-		"ret_ft                  |%lu|\n"
-		"str_ft [%p] |%s|\n"
-		"dst_ft [%p] |%s|\n"
-		,
-		ret_ft,
-		str_ft, str_ft,
-		dst_ft, dst_ft
-		);
-
-		free(str_or);
-		free(dst_or);
-		free(str_ft);
-		free(dst_ft);
-	return (0);
-}
-*/

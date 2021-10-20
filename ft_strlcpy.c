@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:16:22 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:23 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,55 +77,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	*dst = '\0';
 	return (len);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-#define TXT "1234test00"
-
-int	main()
-{
-	size_t	size = 1;
-	
-	size_t	ret_or = 0;
-	char	*str_or = strdup(TXT);
-	char	*dst_or = (char *)malloc(strlen(str_or) + 1);
-	
-	size_t	ret_ft = 0;
-	char	*str_ft = strdup(TXT);
-	char	*dst_ft = (char *)malloc(strlen(str_ft) + 1);
-
-	ret_or = strlcpy(dst_or, str_or, size);
-	ret_ft = ft_strlcpy(dst_ft, str_ft, size);
-
-	printf(
-		"== OR ==\n"
-		"ret_or|%lu|\n"
-		"str_or [%p] |%s|\n"
-		"dst_or [%p] |%s|\n"
-		,
-		ret_or,
-		str_or, str_or,
-		dst_or, dst_or
-		);
-
-	printf(
-		"== FT ==\n"
-		"ret_ft |%lu|\n"
-		"str_ft [%p] |%s|\n"
-		"dst_ft [%p] |%s|\n"
-		,
-		ret_ft,
-		str_ft, str_ft,
-		dst_ft, dst_ft
-		);
-
-		free(str_or);
-		free(dst_or);
-		free(str_ft);
-		free(dst_ft);
-	return (0);
-}
-*/

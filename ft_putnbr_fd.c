@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:36:04 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,3 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &tmp, 1);
 	}
 }
-
-/*
-#include <stdlib.h>
-
-int	main(int c, char **v)
-{
-	if (c != 3)
-	{
-		ft_putstr_fd("ERROR!\n", 1);
-		return (1);
-	}
-	ft_putnbr_fd((int)strtol(v[1], (char **)NULL, 10),
-							(int)strtol(v[2], (char **)NULL, 10));
-	return (0);
-}
-*/

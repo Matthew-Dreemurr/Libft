@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 10:59:01 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:45:00 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,24 +65,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int []){nbr, -nbr}[isneg]);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 2)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	printf("input >>|%s|\n", av[1]);
-	printf(
-		"or_[%d]\nst_[%d]\nft_[%d]\n",
-		atoi(av[1])
-		,(int)strtol(av[1], (char **)NULL, 10)
-		,ft_atoi(av[1])
-		);
-}
-*/

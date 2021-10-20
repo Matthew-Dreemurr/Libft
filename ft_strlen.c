@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:40:11 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,31 +45,3 @@ size_t	ft_strlen(const char *s)
 		s++;
 	return ((size_t)(s - start));
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(int ac, char **av)
-{
-	int i = 1;
-
-	if (ac < 2)
-	{
-		printf("ERROR\n");
-		return (0);
-	}
-	else
-	{
-		while (i < ac)
-		{
-			printf("str:            |%s|\n", av[i]);
-			printf("ft_strlen: %4lu\n", ft_strlen(av[i]));
-			printf("strlen: %7lu\n", strlen(av[i]));
-			i++;
-		}
-		printf("NULL case\n");
-		ft_strlen(NULL);
-	}
-}
-*/

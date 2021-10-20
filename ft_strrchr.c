@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:26:59 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,30 +48,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return (ptr);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-// ./a.out "xxxxxxxxxxxbxxxxxxxxxzbzzzzzzzzz" ''
-// ./a.out "xxxxxxxxxxxbxxxxxxxxxzbzzzzzzzzz" ' '
-// ./a.out "xxxxxxxxxxxbxxxxxxxxxzbzz zzzzzzz" ' '
-// ./a.out "xxxxxxxxxxxbxxxxxxxxxzbzz zzzzzz z" ' '
-// ./a.out "xxxxxxxxxxxbxxxxxxxxxzbzz zzzzzz z " ' '
-
-int	main(int ac, char **av)
-{
-	char	*ret_or;
-	char	*ret_ft;
-
-	if (ac != 3)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	ret_or = strrchr(av[1], av[2][0]);
-	ret_ft = ft_strrchr(av[1], av[2][0]);
-	printf("or_ [%p] |%s|\n", ret_or, ret_or);
-	printf("ft_ [%p] |%s|\n", ret_ft, ret_ft);
-}
-*/

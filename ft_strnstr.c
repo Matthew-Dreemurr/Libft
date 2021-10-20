@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:01:54 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/19 16:24:23 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:46:37 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,28 +60,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-int	main(int ac, char **av)
-{
-	char	*ret_or;
-	char	*ret_ft;
-
-	if (ac != 4)
-	{
-		printf("ERROR!\n");
-		return (0);
-	}
-	// char *test = (char*)"";
-	// ret_or = strnstr(test, "", -1);
-	// ret_ft = ft_strnstr(test, "", -1);
-	ret_or = strnstr(av[1], av[2], atoi(av[3]));
-	ret_ft = ft_strnstr(av[1], av[2], atoi(av[3]));
-	printf("or_ [%p] |%s|\n", ret_or, ret_or);
-	printf("ft_ [%p] |%s|\n", ret_ft, ret_ft);
-}
-*/

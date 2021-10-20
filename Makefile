@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/10/19 14:51:02 by mahadad          ###   ########.fr        #
+#    Updated: 2021/10/20 12:47:05 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ OBJ_DIR = obj/
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-RM = rm -rf
 
 SRC = \
 ft_atoi.c \
@@ -72,7 +71,7 @@ OBJS_B = $(SRC_B:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) -I include -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
