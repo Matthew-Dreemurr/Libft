@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:30:32 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 11:11:09 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param dest
  * @param src
  */
-static void	revcpy(char *dest, const char *src)
+static void	rev_cpy(char *dest, const char *src)
 {
 	const char	*start;
 
@@ -61,7 +61,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * ft_strlen(buff) + 1);
 	if (!str)
 		return (NULL);
-	revcpy(str, buff);
+	rev_cpy(str, buff);
 	return (str);
 }
 

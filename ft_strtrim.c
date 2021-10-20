@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:20:39 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 11:10:28 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	check_set(char c, const char *set)
  * @param start
  * @param end
  */
-static void	cpystarttoend(char *str, const char *start, const char *end)
+static void	cpy_start_to_end(char *str, const char *start, const char *end)
 {
 	while (*start && start < end)
 		*str++ = *start++;
@@ -76,7 +76,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(((end - start) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	cpystarttoend(str, start, end);
+	cpy_start_to_end(str, start, end);
 	return (str);
 }
 

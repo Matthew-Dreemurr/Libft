@@ -6,11 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:57:34 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/18 15:15:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/20 11:14:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 * SYNOPSIS
@@ -31,9 +32,7 @@
 *   always NUL terminating the copied string.
 */
 
-#include <stdlib.h>
-
-static size_t	md_strlen(const char *str)
+static size_t	fk_strlen(const char *str)
 {
 	const char	*start;
 
@@ -48,7 +47,7 @@ char	*ft_strdup(const char *s1)
 	char	*ret;
 	char	*start;
 
-	ret = (char *)malloc((md_strlen(s1) + 1) * sizeof(char));
+	ret = (char *)malloc((fk_strlen(s1) + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);
 	start = ret;
