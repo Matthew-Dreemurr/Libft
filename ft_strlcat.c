@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 12:46:17 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/21 12:48:12 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ SYNOPSIS
 *  NORMINETTE NOTE
 *  Incrementation operators are separated from assignation operators
 *  https://github.com/42School/norminette/issues/155#issuecomment-859322078
+* //TODO !!!! Check tips -> https://discord.com/channels/212192000902955008/718131258223493244/899389138523029565
 */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
