@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:16:53 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 12:40:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/21 13:32:32 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static char	*world_dup(const char *str, char c)
  */
 static char	**error_tab_free(char **tab)
 {
-	char	start;
+	char	**start;
 
 	if (!tab)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:01:48 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/21 12:48:12 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/10/21 13:45:57 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,34 +62,38 @@ SYNOPSIS
 *  NORMINETTE NOTE
 *  Incrementation operators are separated from assignation operators
 *  https://github.com/42School/norminette/issues/155#issuecomment-859322078
-* //TODO !!!! Check tips -> https://discord.com/channels/212192000902955008/718131258223493244/899389138523029565
 */
+
+#include "libft.h"
+
+/**
+ * @brief   The strnlen() function attempts to compute the length of s,
+ *          but never scans beyond the first maxlen bytes of s.
+ *
+ * @param str    the string
+ * @param maxlen the max len
+ * @return size_t The strnlen() function returns either the same result
+ *                as strlen() or maxlen, whichever is smaller.
+ */
+static size_t	fk_strnlen(char *str, size_t maxlen)
+{
+	size_t	len;
+
+	len = 0;
+	while (*str && len < maxlen)
+	{
+		str++;
+		len++;
+	}
+	return (len);
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char		*d;
-	const char	*s;
-	size_t		n;
-	size_t		dlen;
+	size_t	len;
 
-	d = dst;
-	s = src;
-	n = size;
-	while (n-- != 0 && *d != '\0')
-		d++;
-	dlen = d - dst;
-	n = size - dlen;
-	if (n == 0)
-		return (dlen + ft_strlen(s));
-	while (*s != '\0')
-	{
-		if (n != 1)
-		{
-			*d++ = *s;
-			n--;
-		}
-		s++;
-	}
-	*d = '\0';
-	return (dlen + (s - src));
+	len = fk_strnlen(dst, size);
+	if (len == size)
+		return (len + ft_strlen(src));
+	return (len += ft_strlcpy(dst + len, src, size - len));
 }
