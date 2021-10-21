@@ -6,14 +6,11 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/10/20 12:47:05 by mahadad          ###   ########.fr        #
+#    Updated: 2021/10/21 13:50:32 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-SRC_DIR = srcs/
-OBJ_DIR = obj/
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
