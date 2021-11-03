@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/10/21 13:50:32 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/03 17:12:29 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,3 +87,22 @@ clean:
 re: fclean all
 
 .PHONY: all, clean, fclean, re
+
+# _.-=+=-._.-=+=-._[ Dev Tools ]_.-=+=-._.-=+=-._ #
+
+.PHONY: c, cf, r, git, fgit, m, mor, mft, exe
+
+BRANCH	= main
+
+git:
+	@git pull
+	@-git add .
+	@git commit -am "Makefile push `date +'%Y-%m-%d %H:%M:%S'`"
+	@-git push
+
+fgit:
+	@printf "\033[31;1m ======== /!\\ Hard reset to the preview commit ? /!\\ ======== \033[0m\n"
+	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
+	@git fetch --all
+	@git reset --hard $(BRANCH)
+	@git clean -f
