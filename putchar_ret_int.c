@@ -14,11 +14,13 @@
 #include <unistd.h>
 
 /**
- * @brief Outputs the character ’c’ to the `stdout`.
- * 
- * @param c  The character to output.
+ * @brief       Outputs the character ’c’ to the `stdout`.
+ *
+ * @param c     The character to output.
+ *
+ * @return int  Return the number of char print.
  */
-void	ft_putchar(char c)
+int	putchar_ret_int(char c)
 {
 	write(1, &c, sizeof(char));
 	return (1);

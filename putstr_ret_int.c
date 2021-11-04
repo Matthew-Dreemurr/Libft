@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:20:58 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/03 15:52:29 by mahadad          ###   ########.fr       */
+/*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/03 15:47:17 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 #include <unistd.h>
 
 /**
- * @brief Outputs the character ’c’ to the `stdout`.
- * 
- * @param c  The character to output.
+ * @brief    Outputs the string ’s’ to `stdout`.
+ *
+ * @param s  The string to output.
+ *
+ * @return   Return numbre of char print.
  */
-void	ft_putchar(char c)
+int	putstr_ret_int(char *s)
 {
-	write(1, &c, sizeof(char));
-	return (1);
+	char	start;
+
+
+	if (!s)
+		return ;
+	while (*s)
+		write(1, &(*s++), sizeof(char));
+	return ((int)(s - start));
 }
