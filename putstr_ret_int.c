@@ -22,11 +22,12 @@
  */
 int	putstr_ret_int(char *s)
 {
-	char	start;
+	char	*start;
 
 
 	if (!s)
-		return ;
+		return 0;
+	start = s;
 	while (*s)
 		write(1, &(*s++), sizeof(char));
 	return ((int)(s - start));
