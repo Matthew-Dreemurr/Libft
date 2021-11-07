@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   putstr_ret_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/03 15:47:17 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/07 13:52:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@
  */
 int	putstr_ret_int(char *s)
 {
-	char	*start;
-
+	char	*ptr;
 
 	if (!s)
-		return 0;
-	start = s;
-	while (*s)
-		write(1, &(*s++), sizeof(char));
-	return ((int)(s - start));
+		return (0);
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	return (write(STDERR_FILENO, s, (size_t)(ptr - s)));
 }

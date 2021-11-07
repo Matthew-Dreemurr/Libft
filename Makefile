@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/03 17:12:29 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/07 13:44:16 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,14 @@ ft_strtrim.c \
 ft_substr.c \
 ft_tolower.c \
 ft_toupper.c 
+
+# Custom #
+
+SRC += \
+ft_putchar.c \
+ft_putstr.c \
+putstr_ret_int.c \
+putchar_ret_int.c
 
 SRC_B = \
 ft_lstnew.c \

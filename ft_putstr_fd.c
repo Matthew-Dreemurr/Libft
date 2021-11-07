@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
-/*   Updated: 2021/10/20 12:45:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/07 13:27:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
  */
 void	ft_putstr_fd(char *s, int fd)
 {
+	char	*ptr;
+
 	if (!s || fd < 0)
 		return ;
-	while (*s)
-		write(fd, &(*s++), sizeof(char));
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	write(fd, s, (size_t)(ptr - s));
 }

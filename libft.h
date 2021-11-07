@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/03 15:52:34 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/07 13:51:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
-int	putstr_ret_int(char *s);
-int	putchar_ret_int(char c);
+int		putstr_ret_int(char *s);
+int		putchar_ret_int(char c);
 
 /*=={ BONUS }==*/
 
