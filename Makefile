@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/08 15:54:42 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/08 16:43:29 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
-
 SRC_DIR = src/
 OBJ_DIR = obj/
 
@@ -103,6 +102,7 @@ $(OBJ_DIR)%.o: %.c
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
+	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
