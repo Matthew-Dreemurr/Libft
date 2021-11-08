@@ -6,91 +6,117 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/07 13:44:16 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/08 15:54:42 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# _.-=+=-._.-=+=-._[ Var ]_.-=+=-._.-=+=-._ #
 
 NAME = libft.a
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-SRC = \
-ft_atoi.c \
-ft_bzero.c \
-ft_calloc.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isprint.c \
-ft_itoa.c \
-ft_memchr.c \
-ft_memcmp.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c \
-ft_putchar_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c \
-ft_putstr_fd.c \
-ft_split.c \
-ft_strchr.c \
-ft_strdup.c \
-ft_striteri.c \
-ft_strjoin.c \
-ft_strlcat.c \
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strmapi.c \
-ft_strncmp.c \
-ft_strnstr.c \
-ft_strrchr.c \
-ft_strtrim.c \
-ft_substr.c \
-ft_tolower.c \
-ft_toupper.c 
+# _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
 
-# Custom #
+SRC_DIR = src/
+OBJ_DIR = obj/
 
-SRC += \
-ft_putchar.c \
-ft_putstr.c \
-putstr_ret_int.c \
-putchar_ret_int.c
 
-SRC_B = \
-ft_lstnew.c \
-ft_lstdelone.c \
-ft_lstclear.c \
-ft_lstadd_front.c \
-ft_lstadd_back.c \
-ft_lstsize.c \
-ft_lstiter.c \
-ft_lstmap.c \
-ft_lstlast.c
+# _.-=[ src/ctype ]=-._ #
+SRCS = \
+src/ctype/ft_isalpha.c \
+src/ctype/ft_isdigit.c \
+src/ctype/ft_isalnum.c \
+src/ctype/ft_isascii.c \
+src/ctype/ft_isprint.c \
+src/ctype/ft_toupper.c \
+src/ctype/ft_tolower.c
 
-OBJS = $(SRC:.c=.o)
-OBJS_B = $(SRC_B:.c=.o)
+# _.-=[ src/string ]=-._ #
+SRCS += \
+src/string/ft_strlen.c \
+src/string/ft_memset.c \
+src/string/ft_bzero.c \
+src/string/ft_memcpy.c \
+src/string/ft_memmove.c \
+src/string/ft_strlcpy.c \
+src/string/ft_strlcat.c \
+src/string/ft_strchr.c \
+src/string/ft_strrchr.c \
+src/string/ft_strncmp.c \
+src/string/ft_memchr.c \
+src/string/ft_memcmp.c \
+src/string/ft_strnstr.c \
+src/string/ft_strdup.c
+
+# _.-=[ src/stdlib ]=-._ #
+SRCS += \
+src/stdlib/ft_calloc.c \
+src/stdlib/ft_atoi.c
+
+# _.-=[ src/libft ]=-._ #
+SRCS += \
+src/libft/ft_substr.c \
+src/libft/ft_strjoin.c \
+src/libft/ft_strtrim.c \
+src/libft/ft_split.c \
+src/libft/ft_itoa.c \
+src/libft/ft_strmapi.c \
+src/libft/ft_striteri.c \
+src/libft/ft_putchar_fd.c \
+src/libft/ft_putnbr_fd.c \
+src/libft/ft_putstr_fd.c \
+src/libft/ft_putendl_fd.c
+
+# _.-=[ src/custom ]=-._ #
+SRCS += \
+src/custom/ft_putchar.c \
+src/custom/ft_putstr.c \
+src/custom/putstr_ret_int.c \
+src/custom/putchar_ret_int.c
+
+# _.-=[ src/linklst ]=-._ #
+SRCS += \
+src/linklst/ft_lstnew.c \
+src/linklst/ft_lstadd_front.c \
+src/linklst/ft_lstsize.c \
+src/linklst/ft_lstlast.c \
+src/linklst/ft_lstadd_back.c \
+src/linklst/ft_lstdelone.c \
+src/linklst/ft_lstclear.c \
+src/linklst/ft_lstiter.c \
+src/linklst/ft_lstmap.c
+
+SRC		= $(notdir $(SRCS))
+OBJ		= $(SRC:.c=.o)
+OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
+
+VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
 all: $(NAME)
+	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+$(OBJ_DIR)%.o: %.c
+	@$(CC) $(CFLAGS) -I includes -c $< -o $@
+	@printf "\033[32;1m$@\033[32;0m\n"
 
-$(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
-bonus: $(OBJS) $(OBJS_B)
-	ar -rcs $(NAME) $(OBJS) $(OBJS_B)
-	touch bonus
-
-fclean: clean
-	rm -f $(NAME)
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
+	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 
 clean:
-	rm -rf $(OBJS) $(OBJS_B)
-	rm -f bonus
+	@rm -rf $(OBJS)
+	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
+	@rm -rf $(OBJ_DIR)
+	@printf "\033[31;1m[Remove $(OBJ_DIR)]\033[32;0m\n"
+
+fclean: clean
+	@rm -f $(NAME)
+	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 
 re: fclean all
 

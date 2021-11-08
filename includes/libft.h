@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/07 13:51:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/08 13:32:09 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@
 
 /*======[ PROTOTYPE ]======*/
 
-/*=={ ctype.h }==*/
+/*=={ Ctype }==*/
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
-/*=={ string.h }==*/
+/*=={ String }==*/
 
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
@@ -45,17 +47,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
 
-/*=={ ctype.h }==*/
-
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-
-/*=={ stdlib.h }==*/
+/*=={ Stdlib }==*/
 
 void	*ft_calloc(size_t count, size_t size);
 int		ft_atoi(const char *str);
 
-/*=={ libft.h }==*/
+/*=={ Libft }==*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -69,14 +66,14 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
-/*=={ custom }==*/
+/*=={ Custom }==*/
 
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 int		putstr_ret_int(char *s);
 int		putchar_ret_int(char c);
 
-/*=={ BONUS }==*/
+/*=={ Linked List }==*/
 
 typedef struct s_list
 {

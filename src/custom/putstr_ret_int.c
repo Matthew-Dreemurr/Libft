@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/07 13:52:51 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/08 15:26:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	putstr_ret_int(char *s)
 	ptr = s;
 	while (*ptr)
 		ptr++;
-	return (write(STDERR_FILENO, s, (size_t)(ptr - s)));
+	return (write(STDOUT_FILENO, s, (size_t)(ptr - s)));
 }
