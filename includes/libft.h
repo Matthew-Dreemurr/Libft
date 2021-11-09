@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/08 22:32:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/09 11:59:50 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /**
  * @brief s_vector struc to manage the memory of a char array.
  * 
- * @param len Acutal size use in buff
- * @param len_max
- * @param buff
+ * @param len      Actual size use in buff.
+ * @param len_max  Actual max size.
+ * @param buff     The buffer.
  */
 typedef struct s_vector
 {
-size_t	len;
-size_t	len_max;
-char	*buff;
+	size_t	len;
+	size_t	len_max;
+	char	*buff;
 }				t_vector;
 
 #endif
