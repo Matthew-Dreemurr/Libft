@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:52:06 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/09 15:03:39 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/09 15:44:24 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ size_t	len_chrchr(char *str, char c)
 {
 	char	*start;
 
-	if (!str)
-		return (0);
 	start = str;
-	while (*str && *str != c)
+	while (str && *str && *str != c)
 		str++;
+	if (str && *str == c)
+		str++;
+	else
+		return (0);
 	return ((size_t)(str - start));
 }

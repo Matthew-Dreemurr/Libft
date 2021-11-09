@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:24:27 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/09 14:47:32 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/09 16:25:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int	vect_resize(t_vector *v)
 		return (VEC_EXIT_FAILURE);
 	tmp = v->buff;
 	v->max *= 2;
-	if (!vect_new(v->max, v))
+	v->buff = (char *)malloc(v->max);
+	if (!v->buff)
 		return (VEC_EXIT_FAILURE);
-	ft_memmove(v->buff, tmp, v->len);
-	free(tmp);
+	ft_memcpy(v->buff, tmp, v->len);
+	free (tmp);
 	return (VEC_EXIT_SUCCESS);
 }

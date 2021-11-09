@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/09 14:55:20 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/09 16:25:29 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*strjoin_and_free(char **s1, char const *s2);
 size_t		len_chrchr(char *str, char c);
+size_t		strlen_protect(const char *s);
 
 
 /*=={ src/stdio }==*/
@@ -95,7 +96,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 # define VEC_EXIT_FAILURE ((int)0)
 # define VEC_EXIT_SUCCESS ((int)1)
-# define VEC_BUFFER_SIZE  ((unsigned long)256)
+# define VEC_BUFFER_SIZE  ((unsigned long)4)
 
 /**
  * @brief s_vector struc to manage the memory of a char array.
@@ -111,7 +112,7 @@ typedef struct s_vector
 	char	*buff;
 }				t_vector;
 
-int			vect_new(size_t size, t_vector *v);
+int			vect_init(size_t size, t_vector *v);
 int			vect_resize(t_vector *v);
 int			vect_push(t_vector *v, char *str);
 

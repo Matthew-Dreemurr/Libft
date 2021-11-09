@@ -6,16 +6,23 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/08 16:43:29 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/09 16:46:49 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # _.-=+=-._.-=+=-._[ Var ]_.-=+=-._.-=+=-._ #
-
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror $(DEBUG)
+
+ifeq ($(SANI), 1)
+CFLAGS += -fsanitize=address
+D = 1
+endif
+ifeq ($(D), 1)
+CFLAGS += -g3
+endif
 
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
 SRC_DIR = src/
@@ -34,20 +41,29 @@ src/ctype/ft_tolower.c
 
 # _.-=[ src/string ]=-._ #
 SRCS += \
-src/string/ft_strlen.c \
-src/string/ft_memset.c \
 src/string/ft_bzero.c \
-src/string/ft_memcpy.c \
-src/string/ft_memmove.c \
-src/string/ft_strlcpy.c \
-src/string/ft_strlcat.c \
-src/string/ft_strchr.c \
-src/string/ft_strrchr.c \
-src/string/ft_strncmp.c \
 src/string/ft_memchr.c \
 src/string/ft_memcmp.c \
+src/string/ft_memcpy.c \
+src/string/ft_memmove.c \
+src/string/ft_memset.c \
+src/string/ft_split.c \
+src/string/ft_strchr.c \
+src/string/ft_strdup.c \
+src/string/ft_striteri.c \
+src/string/ft_strjoin.c \
+src/string/ft_strlcat.c \
+src/string/ft_strlcpy.c \
+src/string/ft_strlen.c \
+src/string/ft_strmapi.c \
+src/string/ft_strncmp.c \
 src/string/ft_strnstr.c \
-src/string/ft_strdup.c
+src/string/ft_strrchr.c \
+src/string/ft_strtrim.c \
+src/string/ft_substr.c \
+src/string/len_chrchr.c \
+src/string/strjoin_and_free.c \
+src/string/strlen_protect.c
 
 # _.-=[ src/stdlib ]=-._ #
 SRCS += \
@@ -87,6 +103,12 @@ src/linklst/ft_lstclear.c \
 src/linklst/ft_lstiter.c \
 src/linklst/ft_lstmap.c
 
+# _.-=[ src/vector ]=-._ #
+SRCS += \
+src/vector/vect_new.c \
+src/vector/vect_push.c \
+src/vector/vect_resize.c 
+
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
@@ -101,6 +123,7 @@ $(OBJ_DIR)%.o: %.c
 	@printf "\033[32;1m$@\033[32;0m\n"
 
 $(OBJ_DIR):
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	mkdir -p $(OBJ_DIR)
 	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
