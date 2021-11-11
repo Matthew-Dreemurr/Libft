@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/11 14:38:23 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/11 15:39:05 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ endif
 
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
 SRC_DIR = src/
-OBJ_DIR = obj/
+OBJ_DIR = obj_libft/
 
 
 # _.-=[ src/ctype ]=-._ #
@@ -116,6 +116,7 @@ src/linklst/ft_lstmap.c
 SRCS += \
 src/vector/vect_init.c \
 src/vector/vect_cat.c \
+src/vector/vect_push.c \
 src/vector/vect_resize.c 
 
 SRC		= $(notdir $(SRCS))
@@ -173,3 +174,6 @@ fgit:
 	@git fetch --all
 	@git reset --hard $(BRANCH)
 	@git clean -f
+
+m:
+	$(CC) $(CFLAGS) test/main_lib.c $(NAME)
