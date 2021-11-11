@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/09 16:25:29 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/11 12:40:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ typedef struct s_vector
 }				t_vector;
 
 int			vect_init(size_t size, t_vector *v);
-int			vect_resize(t_vector *v);
-int			vect_push(t_vector *v, char *str);
+int			vect_resize(t_vector *v, size_t size);
+int			vect_cat(t_vector *v, char *str);
 
 #endif

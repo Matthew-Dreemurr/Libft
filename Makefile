@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/09 16:46:49 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/11 12:37:44 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = libft.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(DEBUG)
+
+D = 0
 
 ifeq ($(SANI), 1)
 CFLAGS += -fsanitize=address
@@ -105,8 +107,8 @@ src/linklst/ft_lstmap.c
 
 # _.-=[ src/vector ]=-._ #
 SRCS += \
-src/vector/vect_new.c \
-src/vector/vect_push.c \
+src/vector/vect_init.c \
+src/vector/vect_cat.c \
 src/vector/vect_resize.c 
 
 SRC		= $(notdir $(SRCS))
