@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/11 12:37:44 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/11 13:37:56 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,13 +119,13 @@ VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
 all: $(NAME)
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -I includes -c $< -o $@
 	@printf "\033[32;1m$@\033[32;0m\n"
 
 $(OBJ_DIR):
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	mkdir -p $(OBJ_DIR)
 	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
