@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/11 12:40:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/11 14:28:28 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 # include <stddef.h>
 # include <limits.h>
-
+# ifdef WRA
+#  include "wraloc.h"
+# endif
 /*======[ PROTOTYPE ]======*/
 
 /*=={ scr/ctype }==*/
@@ -96,7 +98,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 # define VEC_EXIT_FAILURE ((int)0)
 # define VEC_EXIT_SUCCESS ((int)1)
-# define VEC_BUFFER_SIZE  ((unsigned long)4)
+# define VEC_BUFFER_SIZE  ((unsigned long)256)
 
 /**
  * @brief s_vector struc to manage the memory of a char array.
@@ -112,7 +114,7 @@ typedef struct s_vector
 	char	*buff;
 }				t_vector;
 
-int			vect_init(size_t size, t_vector *v);
+int			vect_init(t_vector *v, size_t size);
 int			vect_resize(t_vector *v, size_t size);
 int			vect_cat(t_vector *v, char *str);
 

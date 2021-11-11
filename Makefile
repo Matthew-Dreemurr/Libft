@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/11 13:37:56 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/11 14:30:09 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,17 @@
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror $(DEBUG)
+CFLAGS = -Wall -Wextra -Werror $(DEBUG) $(INCLUDES)
 
 D = 0
+SANI = 0
+WRA = 0
+INCLUDES = -I includes/
 
+ifeq ($(WRA), 1)
+CFLAGS += -I includes/debug -D WRA
+D = 1
+endif
 ifeq ($(SANI), 1)
 CFLAGS += -fsanitize=address
 D = 1
@@ -120,9 +127,10 @@ VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 all: $(NAME)
 	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 $(OBJ_DIR)%.o: %.c
-	@$(CC) $(CFLAGS) -I includes -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\033[32;1m$@\033[32;0m\n"
 
 $(OBJ_DIR):
