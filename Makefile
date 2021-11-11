@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/11 14:30:09 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/11 14:38:23 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror $(DEBUG) $(INCLUDES)
+CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
 
 D = 0
 SANI = 0
