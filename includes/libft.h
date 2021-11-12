@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/12 16:07:41 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:52:09 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*=={ src/vector }==*/
 
-# define VEC_EXIT_FAILURE ((int)0)
+# define VEC_EXIT_FAILURE ((void *)0)
 # define VEC_EXIT_SUCCESS ((int)1)
 # define VEC_BUFFER_SIZE  ((unsigned long)256)
 
@@ -115,10 +115,10 @@ typedef struct s_vector
 	char	*buff;
 }				t_vector;
 
-int			vect_init(t_vector *v, size_t size);
-int			vect_resize(t_vector *v, size_t size);
-int			vect_cat(t_vector *v, char *str);
-int			vect_push(t_vector *v, char c);
-int			vect_itoa_cat(int n, t_vector *v);
+char	*vect_init(t_vector *v, size_t size);
+char	*vect_resize(t_vector *v, size_t size);
+char	*vect_cat(t_vector *v, char *str);
+char	*vect_push(t_vector *v, char c);
+char	*vect_itoa_cat(int n, t_vector *v);
 
 #endif

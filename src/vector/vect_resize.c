@@ -6,14 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:24:27 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/11 14:12:44 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:51:57 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int			vect_resize(t_vector *v, size_t size)
+char	*vect_resize(t_vector *v, size_t size)
 {
 	char	*tmp;
 
@@ -26,5 +26,5 @@ int			vect_resize(t_vector *v, size_t size)
 		return (VEC_EXIT_FAILURE);
 	ft_memcpy(v->buff, tmp, v->len);
 	free(tmp);
-	return (VEC_EXIT_SUCCESS);
+	return (v->buff);
 }
