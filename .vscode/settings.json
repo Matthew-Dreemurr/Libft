@@ -14,6 +14,7 @@
 		"unordered_map": "c",
 		"utility": "c",
 		"vector": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"s": "c"
 	}
 }

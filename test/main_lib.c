@@ -4,6 +4,23 @@
 #endif
 #include <stdio.h>
 
+
+
+
+
+int	main()
+{
+	t_vector v;
+
+	vect_init(&v, VEC_BUFFER_SIZE);
+	printf("ret: [%d]\n" ,vect_itoa_cat(-123, &v));
+	printf("[%s]\n", v.buff);
+	return 0;
+}
+
+
+
+
 /**
 //make && gcc -I includes -I includes/debug test/main_lib.c libft.a -Wall -Wextra -Werror -g3 -fsanitize=address
 
@@ -25,9 +42,10 @@ int main()
 	return 0;
 }
 **/
-
+/**
 int	main()
 {
 	printf("%s", ft_itoa(9999999999999999));
 	return 0;
 }
+**/

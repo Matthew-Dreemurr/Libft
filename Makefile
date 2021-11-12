@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/11 15:39:05 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/12 16:07:28 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ src/string/ft_strtrim.c \
 src/string/ft_substr.c \
 src/string/len_chrchr.c \
 src/string/strjoin_and_free.c \
-src/string/strlen_protect.c
+src/string/strlen_protect.c \
+src/string/rev_char_arr.c
 
 # _.-=[ src/stdlib ]=-._ #
 SRCS += \
@@ -117,7 +118,8 @@ SRCS += \
 src/vector/vect_init.c \
 src/vector/vect_cat.c \
 src/vector/vect_push.c \
-src/vector/vect_resize.c 
+src/vector/vect_resize.c \
+src/vector/vect_itoa_cat.c
 
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
