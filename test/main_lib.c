@@ -4,6 +4,7 @@
 #endif
 #include <stdio.h>
 
+/**
 //make && gcc -I includes -I includes/debug test/main_lib.c libft.a -Wall -Wextra -Werror -g3 -fsanitize=address
 
 int main() 
@@ -21,5 +22,12 @@ int main()
 	ret = vect_push(&v, '!');
 	printf("[%d]\n", ret);
 	printf("[%s]\n", v.buff);
+	return 0;
+}
+**/
+
+int	main()
+{
+	printf("%s", ft_itoa(9999999999999999));
 	return 0;
 }
