@@ -4,20 +4,22 @@
 #endif
 #include <stdio.h>
 
+//make && gcc -I includes -I includes/debug test/main_lib.c libft.a -Wall -Wextra -Werror -g3 -fsanitize=address
+
 int main() 
 {
 	t_vector v;
-	if (!vect_init(&v, VEC_BUFFER_SIZE))
-		return (1);
+	int	ret;
+	ret = vect_init(&v, VEC_BUFFER_SIZE);
 	printf("[%s]\n", v.buff);
-	if (!vect_cat(&v, "Hello"))
-		return (1);
-	if (!vect_push(&v, ' '))
-		return (1);
-	if (!vect_cat(&v, "World"))
-		return (1);
-	if (!vect_push(&v, '!'))
-		return (1);
+	ret = vect_cat(&v, "Hello");
+	printf("[%d]\n", ret);
+	ret = vect_push(&v, ' ');
+	printf("[%d]\n", ret);
+	ret = vect_cat(&v, "World");
+	printf("[%d]\n", ret);
+	ret = vect_push(&v, '!');
+	printf("[%d]\n", ret);
 	printf("[%s]\n", v.buff);
 	return 0;
 }

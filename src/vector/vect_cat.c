@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:31:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/11 15:07:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/12 13:29:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int	vect_cat(t_vector *v, char *str)
 	while (*str)
 		v->buff[v->len++] = *str++;
 	v->buff[v->len] = '\0';
-	return (VEC_EXIT_SUCCESS);
+	return (len);
 }
