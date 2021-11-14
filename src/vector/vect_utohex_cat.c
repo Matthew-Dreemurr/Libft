@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:48:00 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/14 16:11:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/14 17:18:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	utohex(int index, int upper)
 {
-	char *dico;
+	char	*dico;
 
 	if (upper)
 		dico = "0123456789ABCDEF";
