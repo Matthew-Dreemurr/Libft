@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:06:36 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/12 16:09:13 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/14 15:17:36 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	rev_char_arr(char *str, size_t size)
 	size_t	mid;
 	char	tmp;
 
+	if (size == 1)
+		return ;
 	x = 0;
 	mid = size / 2;
 	size--;

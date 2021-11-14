@@ -1,12 +1,22 @@
-#include "libft.h"
+#include "../includes/libft.h"
 #ifdef WRA
 # include "wraloc.h"
 #endif
 #include <stdio.h>
 
+int	main()
+{
+	char *str;
+
+	str = ft_strdup("1");
+	printf("%s\n", str);
+	rev_char_arr(str, strlen_protect(str));
+	printf("%s\n", str);
+	return 0;
+}
 
 
-
+/**
 
 int	main()
 {
@@ -17,7 +27,7 @@ int	main()
 	printf("[%s]\n", v.buff);
 	return 0;
 }
-
+**/
 
 
 
