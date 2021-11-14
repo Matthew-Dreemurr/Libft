@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/14 14:41:41 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/14 15:44:09 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,7 +120,8 @@ src/vector/vect_cat.c \
 src/vector/vect_push.c \
 src/vector/vect_resize.c \
 src/vector/vect_itoa_cat.c \
-src/vector/vect_utoa_cat.c
+src/vector/vect_utoa_cat.c \
+src/vector/vect_utohex_cat.c
 
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
