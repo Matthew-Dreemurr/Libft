@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/14 16:12:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/15 11:38:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*strjoin_and_free(char **s1, char const *s2);
 size_t		len_chrchr(char *str, char c);
 size_t		strlen_protect(const char *s);
-void	rev_char_arr(char *str, size_t size);
-
+void		rev_char_arr(char *str, size_t size);
 
 /*=={ src/stdio }==*/
 
@@ -115,13 +114,13 @@ typedef struct s_vector
 	char	*buff;
 }				t_vector;
 
-char	*vect_init(t_vector *v, size_t size);
-char	*vect_resize(t_vector *v, size_t size);
-char	*vect_cat(t_vector *v, char *str);
-char	*vect_push(t_vector *v, char c);
-char	*vect_itoa_cat(int n, t_vector *v);
-char	*vect_utoa_cat(unsigned int n, t_vector *v);
-char	*vect_uthex_cat(unsigned int n, t_vector *v, int upper);
-char	*vect_ultohex_cat(size_t n, t_vector *v, int upper);
+char		*vect_init(t_vector *v, size_t size);
+char		*vect_resize(t_vector *v, size_t size);
+char		*vect_cat(t_vector *v, char *str);
+char		*vect_push(t_vector *v, char c);
+char		*vect_itoa_cat(int n, t_vector *v);
+char		*vect_utoa_cat(unsigned int n, t_vector *v);
+char		*vect_uthex_cat(unsigned int n, t_vector *v, int upper);
+char		*vect_ultohex_cat(size_t n, t_vector *v, int upper);
 
 #endif
