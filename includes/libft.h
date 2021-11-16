@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/15 11:38:44 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,13 +114,13 @@ typedef struct s_vector
 	char	*buff;
 }				t_vector;
 
-char		*vect_init(t_vector *v, size_t size);
-char		*vect_resize(t_vector *v, size_t size);
-char		*vect_cat(t_vector *v, char *str);
-char		*vect_push(t_vector *v, char c);
-char		*vect_itoa_cat(int n, t_vector *v);
-char		*vect_utoa_cat(unsigned int n, t_vector *v);
-char		*vect_uthex_cat(unsigned int n, t_vector *v, int upper);
-char		*vect_ultohex_cat(size_t n, t_vector *v, int upper);
+char		*vect_init(t_vector *vec, size_t size);
+char		*vect_resize(t_vector *vec, size_t size);
+char		*vect_cat(t_vector *vec, char *str);
+char		*vect_push(t_vector *vec, char c);
+char		*vect_itoa_cat(int n, t_vector *vec);
+char		*vect_utoa_cat(unsigned int n, t_vector *vec);
+char		*vect_uthex_cat(unsigned int n, t_vector *vec, int upper);
+char		*vect_ultohex_cat(size_t n, t_vector *vec, int upper);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:24:27 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/15 11:36:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 /**
  * @brief Resize the buffer wit `size`.
  * 
- * @param v 
+ * @param vec 
  * @param size 
  * @return char* 
  */
-char	*vect_resize(t_vector *v, size_t size)
+char	*vect_resize(t_vector *vec, size_t size)
 {
 	char	*tmp;
 
-	if (!v || !v->max)
+	if (!vec || !vec->max)
 		return (VEC_EXIT_FAILURE);
-	tmp = v->buff;
-	v->max = size;
-	v->buff = (char *)malloc(v->max);
-	if (!v->buff)
+	tmp = vec->buff;
+	vec->max = size;
+	vec->buff = (char *)malloc(vec->max);
+	if (!vec->buff)
 	{
-		v->buff = tmp;
+		vec->buff = tmp;
 		return (VEC_EXIT_FAILURE);
 	}
-	ft_memcpy(v->buff, tmp, v->len);
+	ft_memcpy(vec->buff, tmp, vec->len);
 	free(tmp);
-	return (v->buff);
+	return (vec->buff);
 }

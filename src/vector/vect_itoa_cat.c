@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:48:00 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/14 17:17:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param n The integer to convert.
  * @return int `0` if error else `!0`.
  */
-char	*vect_itoa_cat(int n, t_vector *v)
+char	*vect_itoa_cat(int n, t_vector *vec)
 {
 	char	buff[12];
 	char	*ptr;
@@ -40,7 +40,7 @@ char	*vect_itoa_cat(int n, t_vector *v)
 		*ptr = '\0';
 	nbr = strlen_protect(buff);
 	rev_char_arr(buff, nbr);
-	if (!vect_cat(v, buff))
+	if (!vect_cat(vec, buff))
 		return (VEC_EXIT_FAILURE);
-	return (v->buff);
+	return (vec->buff);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:48:00 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/14 17:18:41 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	utohex(int index, int upper)
  * @param n The integer to convert.
  * @return int `0` if error else `!0`.
  */
-char	*vect_ultohex_cat(size_t n, t_vector *v, int upper)
+char	*vect_ultohex_cat(size_t n, t_vector *vec, int upper)
 {
 	char	buff[20];
 	char	*ptr;
@@ -47,7 +47,7 @@ char	*vect_ultohex_cat(size_t n, t_vector *v, int upper)
 	*ptr = '\0';
 	n = strlen_protect(buff);
 	rev_char_arr(buff, n);
-	if (!vect_cat(v, buff))
+	if (!vect_cat(vec, buff))
 		return (VEC_EXIT_FAILURE);
-	return (v->buff);
+	return (vec->buff);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:31:01 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/12 16:50:52 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 /**
  * @brief
  * 
- * @param v 
+ * @param vec 
  * @param str 
  * @return int 
  */
-char	*vect_cat(t_vector *v, char *str)
+char	*vect_cat(t_vector *vec, char *str)
 {
 	size_t	len;
 
-	if (!str && !v)
+	if (!str && !vec)
 		return (VEC_EXIT_FAILURE);
 	len = strlen_protect(str);
-	while (v->max < (v->len + (len + 1)))
-		if (!vect_resize(v, v->max * 2))
+	while (vec->max < (vec->len + (len + 1)))
+		if (!vect_resize(vec, vec->max * 2))
 			return (VEC_EXIT_FAILURE);
 	while (*str)
-		v->buff[v->len++] = *str++;
-	v->buff[v->len] = '\0';
-	return (v->buff);
+		vec->buff[vec->len++] = *str++;
+	vec->buff[vec->len] = '\0';
+	return (vec->buff);
 }
