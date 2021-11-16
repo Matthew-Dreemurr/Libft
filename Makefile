@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/14 15:44:09 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/16 13:52:08 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,88 +40,89 @@ OBJ_DIR = obj_libft/
 
 # _.-=[ src/ctype ]=-._ #
 SRCS = \
-src/ctype/ft_isalpha.c \
-src/ctype/ft_isdigit.c \
-src/ctype/ft_isalnum.c \
-src/ctype/ft_isascii.c \
-src/ctype/ft_isprint.c \
-src/ctype/ft_toupper.c \
-src/ctype/ft_tolower.c
+ft_isalpha.c \
+ft_isdigit.c \
+ft_isalnum.c \
+ft_isascii.c \
+ft_isprint.c \
+ft_toupper.c \
+ft_tolower.c
 
 # _.-=[ src/string ]=-._ #
 SRCS += \
-src/string/ft_bzero.c \
-src/string/ft_memchr.c \
-src/string/ft_memcmp.c \
-src/string/ft_memcpy.c \
-src/string/ft_memmove.c \
-src/string/ft_memset.c \
-src/string/ft_split.c \
-src/string/ft_strchr.c \
-src/string/ft_strdup.c \
-src/string/ft_striteri.c \
-src/string/ft_strjoin.c \
-src/string/ft_strlcat.c \
-src/string/ft_strlcpy.c \
-src/string/ft_strlen.c \
-src/string/ft_strmapi.c \
-src/string/ft_strncmp.c \
-src/string/ft_strnstr.c \
-src/string/ft_strrchr.c \
-src/string/ft_strtrim.c \
-src/string/ft_substr.c \
-src/string/len_chrchr.c \
-src/string/strjoin_and_free.c \
-src/string/strlen_protect.c \
-src/string/rev_char_arr.c
+ft_bzero.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_memset.c \
+ft_split.c \
+ft_strchr.c \
+ft_strdup.c \
+ft_striteri.c \
+ft_strjoin.c \
+ft_strlcat.c \
+ft_strlcpy.c \
+ft_strlen.c \
+ft_strmapi.c \
+ft_strncmp.c \
+ft_strnstr.c \
+ft_strrchr.c \
+ft_strtrim.c \
+ft_substr.c \
+len_chrchr.c \
+strjoin_and_free.c \
+strlen_protect.c \
+rev_char_arr.c
 
 # _.-=[ src/stdlib ]=-._ #
 SRCS += \
-src/stdlib/ft_calloc.c \
-src/stdlib/ft_atoi.c
+ft_calloc.c \
+ft_itoa.c \
+ft_atoi.c \
+free_return.c
 
 # _.-=[ src/libft ]=-._ #
 SRCS += \
-src/libft/ft_substr.c \
-src/libft/ft_strjoin.c \
-src/libft/ft_strtrim.c \
-src/libft/ft_split.c \
-src/libft/ft_itoa.c \
-src/libft/ft_strmapi.c \
-src/libft/ft_striteri.c \
-src/libft/ft_putchar_fd.c \
-src/libft/ft_putnbr_fd.c \
-src/libft/ft_putstr_fd.c \
-src/libft/ft_putendl_fd.c
+ft_substr.c \
+ft_strjoin.c \
+ft_strtrim.c \
+ft_split.c \
+ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putnbr_fd.c \
+ft_putstr_fd.c \
+ft_putendl_fd.c
 
 # _.-=[ src/custom ]=-._ #
 SRCS += \
-src/custom/ft_putchar.c \
-src/custom/ft_putstr.c \
-src/custom/putstr_ret_int.c \
-src/custom/putchar_ret_int.c
+ft_putchar.c \
+ft_putstr.c \
+putstr_ret_int.c \
+putchar_ret_int.c
 
 # _.-=[ src/linklst ]=-._ #
 SRCS += \
-src/linklst/ft_lstnew.c \
-src/linklst/ft_lstadd_front.c \
-src/linklst/ft_lstsize.c \
-src/linklst/ft_lstlast.c \
-src/linklst/ft_lstadd_back.c \
-src/linklst/ft_lstdelone.c \
-src/linklst/ft_lstclear.c \
-src/linklst/ft_lstiter.c \
-src/linklst/ft_lstmap.c
+ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c
 
 # _.-=[ src/vector ]=-._ #
 SRCS += \
-src/vector/vect_init.c \
-src/vector/vect_cat.c \
-src/vector/vect_push.c \
-src/vector/vect_resize.c \
-src/vector/vect_itoa_cat.c \
-src/vector/vect_utoa_cat.c \
-src/vector/vect_utohex_cat.c
+vect_init.c \
+vect_cat.c \
+vect_push.c \
+vect_resize.c \
+vect_itoa_cat.c \
+vect_utoa_cat.c \
+vect_utohex_cat.c
 
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)

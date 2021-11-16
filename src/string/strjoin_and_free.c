@@ -6,14 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:59:26 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/14 17:17:09 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:52:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*free_return(char **ptr)
+static char	*strj_free_return(char **ptr)
 {
 	if (*ptr)
 		free(*ptr);
@@ -61,7 +61,7 @@ char	*strjoin_and_free(char **s1, char const *s2)
 
 	ret = alloc_init(*s1, s2);
 	if (!ret)
-		return (free_return(s1));
+		return (strj_free_return(s1));
 	s1_ptr = *s1;
 	ret_ptr = ret;
 	while (s1_ptr && *s1_ptr)

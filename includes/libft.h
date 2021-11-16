@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:50:52 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
-char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*strjoin_and_free(char **s1, char const *s2);
@@ -75,6 +74,8 @@ int			putchar_ret_int(char c);
 
 void		*ft_calloc(size_t count, size_t size);
 int			ft_atoi(const char *str);
+char		*ft_itoa(int n);
+void		*free_return(void *ptr, void *ret);
 
 /*=={ src/linklst }==*/
 
