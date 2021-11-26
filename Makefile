@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/16 13:52:08 by mahadad          ###   ########.fr        #
+#    Updated: 2021/11/27 00:33:55 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,18 @@ CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
 D = 0
 SANI = 0
 WRA = 0
-INCLUDES = -I includes/
+COMP_D = 0
 
 ifeq ($(WRA), 1)
 CFLAGS += -I includes/debug -D WRA
 D = 1
 endif
+
 ifeq ($(SANI), 1)
 CFLAGS += -fsanitize=address
 D = 1
 endif
+
 ifeq ($(D), 1)
 CFLAGS += -g3
 endif
@@ -37,8 +39,7 @@ endif
 SRC_DIR = src/
 OBJ_DIR = obj_libft/
 
-
-# _.-=[ src/ctype ]=-._ #
+# _.-=[ src/libc/ctype ]=-._ #
 SRCS = \
 ft_isalpha.c \
 ft_isdigit.c \
@@ -48,7 +49,7 @@ ft_isprint.c \
 ft_toupper.c \
 ft_tolower.c
 
-# _.-=[ src/string ]=-._ #
+# _.-=[ src/libc/string ]=-._ #
 SRCS += \
 ft_bzero.c \
 ft_memchr.c \
@@ -75,14 +76,14 @@ strjoin_and_free.c \
 strlen_protect.c \
 rev_char_arr.c
 
-# _.-=[ src/stdlib ]=-._ #
+# _.-=[ src/libc/stdlib ]=-._ #
 SRCS += \
 ft_calloc.c \
 ft_itoa.c \
 ft_atoi.c \
 free_return.c
 
-# _.-=[ src/libft ]=-._ #
+# _.-=[ src/libc/libft ]=-._ #
 SRCS += \
 ft_substr.c \
 ft_strjoin.c \
@@ -95,14 +96,14 @@ ft_putnbr_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c
 
-# _.-=[ src/custom ]=-._ #
+# _.-=[ src/libc/custom ]=-._ #
 SRCS += \
 ft_putchar.c \
 ft_putstr.c \
 putstr_ret_int.c \
 putchar_ret_int.c
 
-# _.-=[ src/linklst ]=-._ #
+# _.-=[ src/libc/linklst ]=-._ #
 SRCS += \
 ft_lstnew.c \
 ft_lstadd_front.c \
@@ -114,7 +115,7 @@ ft_lstclear.c \
 ft_lstiter.c \
 ft_lstmap.c
 
-# _.-=[ src/vector ]=-._ #
+# _.-=[ src/libc/vector ]=-._ #
 SRCS += \
 vect_init.c \
 vect_cat.c \
@@ -124,6 +125,20 @@ vect_itoa_cat.c \
 vect_utoa_cat.c \
 vect_utohex_cat.c
 
+# _.-=[ src/libc/vector ]=-._ #
+SRCS += \
+ft_printf.c \
+conv_ptr.c \
+conv_digit.c \
+conv_utils.c \
+arg_manager.c \
+conv_char.c
+
+INCLUDES = \
+-I includes/ \
+-I src/printf/includes \
+-I src/vector/includes
+
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
@@ -131,13 +146,10 @@ OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
 VPATH	= $(SRC_DIR) $(OBJ_DIR) $(shell find $(SRC_DIR) -type d)
 
 all: $(NAME)
-	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
-	@printf "[Compiled /w this flag $(CFLAGS)]"
 
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "\033[32;1m$@\033[32;0m\n"
+	@if [[ $(COMP_D) = "0" ]]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
@@ -145,7 +157,9 @@ $(OBJ_DIR):
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
-	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
+	@printf "\n\033[32;1m[== Linked OK ==]\033[32;0m\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 
 clean:
 	@rm -rf $(OBJS)
@@ -157,28 +171,30 @@ fclean: clean
 	@rm -f $(NAME)
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 
+subfclean: fclean
+	make fclean -C src/printf
+
 re: fclean all
 
 .PHONY: all, clean, fclean, re
 
 # _.-=+=-._.-=+=-._[ Dev Tools ]_.-=+=-._.-=+=-._ #
+.PHONY: c, cf, r, git, fgit, m, mor, mft, exe, h
 
-.PHONY: c, cf, r, git, fgit, m, mor, mft, exe
+m:
+	$(CC) $(CFLAGS) $(INCLUDES) $(NAME) test/main_lib.c
 
-BRANCH	= main
+h:
+	@echo "\033[1J"
+
+c: clean
+
+fc: fclean
+
+r: re
 
 git:
 	@git pull
 	@-git add .
 	@git commit -am "Makefile push `date +'%Y-%m-%d %H:%M:%S'`"
 	@-git push
-
-fgit:
-	@printf "\033[31;1m ======== /!\\ Hard reset to the preview commit ? /!\\ ======== \033[0m\n"
-	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
-	@git fetch --all
-	@git reset --hard $(BRANCH)
-	@git clean -f
-
-m:
-	$(CC) $(CFLAGS) test/main_lib.c $(NAME)

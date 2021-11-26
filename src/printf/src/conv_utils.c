@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putvectbuff_ret_int.c                              :+:      :+:    :+:   */
+/*   conv_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 13:56:02 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/26 23:54:16 by mahadad          ###   ########.fr       */
+/*   Created: 2021/11/05 13:45:18 by mahadad           #+#    #+#             */
+/*   Updated: 2021/11/14 17:20:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
-#include <unistd.h>
+#include "ft_printf.h"
 
 /**
- * @brief    Outputs the `vect->buffer` to `stdout`.
+ * @brief Dummy function.
  *
- * @return   Return numbre of char print.
+ * @return int Return `1`
  */
-int	putvectbuff_ret_int(t_vector *vect)
+int	conv_invalid(va_list *arg, t_data *d)
 {
-	if (!vect)
-		return (0);
-	return (write(STDOUT_FILENO, vect->buff, vect->len));
+	(void)arg;
+	(void)d;
+	return (F_EXIT_FAILURE);
 }

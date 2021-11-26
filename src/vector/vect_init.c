@@ -6,11 +6,11 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:24:10 by mahadad           #+#    #+#             */
-/*   Updated: 2021/11/16 13:39:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:54:16 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 #include <stdlib.h>
 
 char	*vect_init(t_vector *vec, size_t size)

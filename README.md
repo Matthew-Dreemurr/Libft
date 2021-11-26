@@ -1,5 +1,11 @@
 # libft
 
+## TODO
+
+repenser la compilation des "sous module" en créent des .a a compiler 
+
+faire un test unitaire pour chaque fonction
+
 |   |   |
 |---|---|
 | ft_isalpha       | ✅ |

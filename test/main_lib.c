@@ -1,9 +1,18 @@
-#include "../includes/libft.h"
+#include "libft.h"
+#include "ft_printf.h"
 #ifdef WRA
 # include "wraloc.h"
 #endif
 #include <stdio.h>
 
+
+int	main()
+{
+	ft_printf("Test\n");
+	return 0;
+}
+
+/**
 int	main()
 {
 	char *str;
@@ -14,7 +23,7 @@ int	main()
 	printf("%s\n", str);
 	return 0;
 }
-
+**/
 
 /**
 
