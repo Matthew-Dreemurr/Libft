@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/29 16:15:05 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 14:11:36 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,14 +57,14 @@ $(OBJ_DIR)%.o: %.c
 	@if [[ $(COMP_D) = "0" ]]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
-	@printf "\n\033[32;1m[== Linked OK ==]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
-	@printf "\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
+	@printf "\n\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
+	@printf "[Compiled /w this flag $(CFLAGS)]\n"
 
 clean:
 	@rm -rf $(OBJS)
