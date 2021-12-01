@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 14:11:36 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 16:29:53 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,8 @@ CFLAGS += -g3
 endif
 
 # _.-=+=-._.-=+=-._[ Source & Bin ]_.-=+=-._.-=+=-._ #
+.PHONY: all, clean, fclean, re
+
 SRC_DIR = src/
 OBJ_DIR = obj_$(basename $(NAME))/
 
@@ -52,19 +54,25 @@ all: $(NAME)
 
 bonus: all
 
+only_obj: $(OBJ_DIR) $(OBJS)
+	@printf "\n[Compiled /w this flag $(CFLAGS)]\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+
+info:
+	@printf "\n[Compiled /w this flag $(CFLAGS)]\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@if [[ $(COMP_D) = "0" ]]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
+	@printf "\n\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
-$(NAME): $(OBJ_DIR) $(OBJS)
+$(NAME): $(OBJ_DIR) $(OBJS) info
 	@ar -rcs $(NAME) $(OBJS)
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 	@printf "\n\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
-	@printf "[Compiled /w this flag $(CFLAGS)]\n"
 
 clean:
 	@rm -rf $(OBJS)
@@ -80,8 +88,6 @@ subfclean: fclean
 	make fclean -C src/printf
 
 re: fclean all
-
-.PHONY: all, clean, fclean, re
 
 # _.-=+=-._.-=+=-._[ Dev Tools ]_.-=+=-._.-=+=-._ #
 .PHONY: c, cf, r, git, fgit, m, mor, mft, exe, h
