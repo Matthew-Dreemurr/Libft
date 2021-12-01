@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 16:29:53 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/01 17:08:56 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,11 +55,7 @@ all: $(NAME)
 bonus: all
 
 only_obj: $(OBJ_DIR) $(OBJS)
-	@printf "\n[Compiled /w this flag $(CFLAGS)]\n"
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
-
-info:
-	@printf "\n[Compiled /w this flag $(CFLAGS)]\n"
+	@printf "\n\033[32;3m[Compiled /w CFLAGS=$(CFLAGS)]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
 $(OBJ_DIR)%.o: %.c
@@ -70,9 +66,11 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 	@printf "\n\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
-$(NAME): $(OBJ_DIR) $(OBJS) info
+$(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 	@printf "\n\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
+	@printf "\n\033[32;3m[Compiled /w CFLAGS=$(CFLAGS)]\033[32;0m\n"
+	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
 clean:
 	@rm -rf $(OBJS)
