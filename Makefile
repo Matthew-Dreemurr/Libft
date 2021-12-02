@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/12/01 17:08:56 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/02 13:41:40 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ only_obj: $(OBJ_DIR) $(OBJS)
 	@printf "\n\033[32;3m[Compiled /w CFLAGS=$(CFLAGS)]\033[32;0m\n"
 	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
-$(OBJ_DIR)%.o: %.c
+$(OBJ_DIR)%.o: %.c includes/libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@if [[ $(COMP_D) = "0" ]]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
 
