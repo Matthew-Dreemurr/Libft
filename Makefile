@@ -56,11 +56,11 @@ bonus: all
 
 only_obj: $(OBJ_DIR) $(OBJS)
 	@printf "\n\033[32;3m[Compiled /w CFLAGS=$(CFLAGS)]\033[32;0m\n"
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+	@if [ $D = "1" ]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
 $(OBJ_DIR)%.o: %.c includes/libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@if [[ $(COMP_D) = "0" ]]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
+	@if [ $(COMP_D) = "0" ]; then printf "\033[32;1m.\033[32;0m"; else printf "\033[32;1m$@\033[32;0m\n"; fi
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -70,7 +70,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 	@printf "\n\033[32;1m[== $(NAME) Created ! ==]\033[32;0m\n"
 	@printf "\n\033[32;3m[Compiled /w CFLAGS=$(CFLAGS)]\033[32;0m\n"
-	@if [[ $D = "1" ]]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
+	@if [ $D = "1" ]; then printf "\033[31;1m[/!\\ DEBUG ENABLE /!\\]\033[32;0m\n"; fi
 
 clean:
 	@rm -rf $(OBJS)
