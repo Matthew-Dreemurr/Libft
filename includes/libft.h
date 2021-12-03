@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 21:29:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2021/12/03 22:42:03 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ char		*strjoin_and_free(char **s1, char const *s2);
 size_t		len_chrchr(char *str, char c);
 size_t		strlen_protect(const char *s);
 void		rev_char_arr(char *str, size_t size);
-int		charsetstr_strict(char *str, char *set);
+int			charsetstr_strict(char *str, char *set);
+int			charsetchar(char c, char *set);
+
 
 /*=={ src/stdio }==*/
 

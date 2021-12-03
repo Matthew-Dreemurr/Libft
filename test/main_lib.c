@@ -6,7 +6,10 @@
 
 int	main(void)
 {
-	printf("%d", charsetstr_strict("sdsdsdsdsdsdffsdsd", "sda"));
+	printf("%d\n", charsetchar('w', "sda"));
+	printf("%d\n", charsetchar('d', "sda"));
+	printf("%d\n", charsetstr_strict("sdsdsdsdsdsdffsdsd", "sda"));
+	printf("%d\n", charsetstr_strict("sdsdsdsdsdsdsdsd", "sda"));
 	return 0;
 }
 
