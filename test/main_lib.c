@@ -6,13 +6,20 @@
 
 int	main(void)
 {
+	char *test = ft_strdup("UwU");
+	(void)test;
+}
+
+/*
+int	main(void)
+{
 	printf("%d\n", charsetchar('w', "sda"));
 	printf("%d\n", charsetchar('d', "sda"));
 	printf("%d\n", charsetstr_strict("sdsdsdsdsdsdffsdsd", "sda"));
 	printf("%d\n", charsetstr_strict("sdsdsdsdsdsdsdsd", "sda"));
 	return 0;
 }
-
+*/
 /*
 int	main()
 {
