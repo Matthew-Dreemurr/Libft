@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 22:42:03 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 14:03:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void		rev_char_arr(char *str, size_t size);
 int			charsetstr_strict(char *str, char *set);
 int			charsetchar(char c, char *set);
 
-
 /*=={ src/stdio }==*/
 
 void		ft_putchar_fd(char c, int fd);
@@ -78,6 +77,7 @@ int			putchar_ret_int(char c);
 
 void		*ft_calloc(size_t count, size_t size);
 int			ft_atoi(const char *str);
+long		ft_atol(const char *str);
 char		*ft_itoa(int n);
 void		*free_return(void *ptr, void *ret);
 
