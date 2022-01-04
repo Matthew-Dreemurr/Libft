@@ -4,12 +4,22 @@
 #endif
 #include <stdio.h>
 
+#include <stdlib.h>
+
+int	main(int ac, char **av)
+{
+	printf("[%ld]\n", fk_atol(av[1]));
+	printf("[%ld]\n", strtol(av[1], NULL, 10));
+}
+
+/*
 int	main(void)
 {
 	char *test = ft_strdup("UwU");
 	(void)test;
 }
 
+*/
 /*
 int	main(void)
 {

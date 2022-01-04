@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 14:04:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 14:23:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,11 @@
  * 
  *    It is equivalent to:
  *     strtol(str, (char **)NULL, 10);
- * 
- * ERRORS
- *    The functions atol() and atoll() may affect the value of errno on an
- *    error.
+ *    BUUUUUUT if the number is > LONG_MAX or < LONG_MIN will return `0` if neg
+ *    or `-1` if pos.
 */
 
-long	ft_atol(const char *str)
+long	fk_atol(const char *str)
 {
 	unsigned long	nbr;
 	unsigned long	cutoff;
