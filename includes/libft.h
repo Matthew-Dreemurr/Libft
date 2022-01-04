@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:47:47 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 14:18:59 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 17:11:38 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int			ft_tolower(int c);
 /*=={ src/string }==*/
 
 size_t		ft_strlen(const char *s);
+size_t		fk_strtablen(const char **tab);
+size_t		fk_strtablen_strict(const char **tab, size_t limit);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
@@ -59,8 +61,8 @@ char		*strjoin_and_free(char **s1, char const *s2);
 size_t		len_chrchr(char *str, char c);
 size_t		strlen_protect(const char *s);
 void		rev_char_arr(char *str, size_t size);
-int			charsetstr_strict(char *str, char *set);
-int			charsetchar(char c, char *set);
+int			charsetstr_strict(const char *str, char *set);
+int			charsetchar(const char c, char *set);
 
 /*=={ src/stdio }==*/
 

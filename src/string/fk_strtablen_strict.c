@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   charsetchar.c                                      :+:      :+:    :+:   */
+/*   fk_strtablen_strict.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 21:10:16 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 16:11:40 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/04 17:01:54 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/04 17:11:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * @brief Will check if the char is composed with one of the character in `set`.
- *         Only
- * 
- * @param c The char.
- * @param set The caracter set.
- * @return int the index if the char in `set`, else `-1`.
- */
-int	charsetchar(const char c, char *set)
+size_t	fk_strtablen_strict(const char **tab, size_t limit)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (set[i])
+	len = 0;
+	while (limit-- && *tab)
 	{
-		if (set[i] == c)
-			break ;
-		i++;
+		len += ft_strlen(*tab);
+		tab++;
 	}
-	if (!set[i])
-		return (-1);
-	return (i);
+	return (len);
 }
