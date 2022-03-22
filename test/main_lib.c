@@ -3,13 +3,47 @@
 # include "wraloc.h"
 #endif
 #include <stdio.h>
+#include <stddef.h>
 
+
+/*
+int	main(void)
+{
+	const char	*test[999];
+	int i = 0;
+
+	test[i++] = "1";
+	test[i++] = "2";
+	test[i++] = "3";
+	test[i++] = "4";
+	test[i++] = "1";
+	test[i++] = "2";
+	test[i++] = "3";
+	test[i++] = "4";
+	test[i] = NULL;
+	i = fk_strtablen(test);
+	printf("%ld\n", i);
+	return 0;
+}
+
+*/
+/*
+#include <stdlib.h>
+
+int	main(int ac, char **av)
+{
+	printf("[%ld]\n", fk_atol(av[1]));
+	printf("[%ld]\n", strtol(av[1], NULL, 10));
+}
+*/
+/*
 int	main(void)
 {
 	char *test = ft_strdup("UwU");
 	(void)test;
 }
 
+*/
 /*
 int	main(void)
 {

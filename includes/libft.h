@@ -35,6 +35,8 @@ int			ft_tolower(int c);
 /*=={ src/string }==*/
 
 size_t		ft_strlen(const char *s);
+size_t		fk_strtablen(const char **tab);
+size_t		fk_strtablen_strict(const char **tab, size_t limit);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
@@ -59,8 +61,8 @@ char		*strjoin_and_free(char **s1, char const *s2);
 size_t		len_chrchr(char *str, char c);
 size_t		strlen_protect(const char *s);
 void		rev_char_arr(char *str, size_t size);
-int			charsetstr_strict(char *str, char *set);
-int			charsetchar(char c, char *set);
+int			charsetstr_strict(const char *str, char *set);
+int			charsetchar(const char c, char *set);
 
 /*=={ src/stdio }==*/
 
@@ -77,6 +79,7 @@ int			putchar_ret_int(char c);
 
 void		*ft_calloc(size_t count, size_t size);
 int			ft_atoi(const char *str);
+long		fk_atol(const char *str);
 char		*ft_itoa(int n);
 void		*free_return(void *ptr, void *ret);
 

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 21:10:16 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/03 22:39:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 16:11:19 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @return int `1` if all the char in `str` is composed with the char in `set`,
  *              else `0`.
  */
-int	charsetstr_strict(char *str, char *set)
+int	charsetstr_strict(const char *str, char *set)
 {
 	int	i;
 

@@ -15,3 +15,5 @@ This project has been coded according to the `NormeV3` standard.
 faire un test unitaire pour chaque fonction
 
 refaire reademe
+
+This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.

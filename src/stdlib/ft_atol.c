@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:08:41 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 14:18:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 14:23:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-* SYNOPSIS
-*   #include <stdlib.h>
-* 
-*   int
-*   atoi(const char *str);
-* 
-* DESCRIPTION
-*   The atoi() function converts the initial portion of the string pointed to
-*   by str to int representation.
-* 
-*   It is equivalent to:
-* 
-*     (int)strtol(str, (char **)NULL, 10);
-* 
-*   While the atoi() function uses the current locale, the atoi_l() function
-*   may be passed a locale directly. See xlocale(3) for more information.
-* 
-* IMPLEMENTATION NOTES
-*   The atoi() and atoi_l() functions are thread-safe and async-cancel-safe.
-* 
-*   The strtol() and strtol_l() functions are recommended instead of atoi()
-*   and atoi_l() functions, especially in new code.
-* 
-* ERRORS
-*   The function atoi() need not affect the value of errno on an error.
+ * SYNOPSIS
+ *    #include <stdlib.h>
+ * 
+ *    long
+ *    atol(const char *str);
+ * 
+ * DESCRIPTION
+ *    The atol() function converts the initial portion of the string pointed to
+ *    by str to long integer representation.
+ * 
+ *    It is equivalent to:
+ *     strtol(str, (char **)NULL, 10);
+ *    BUUUUUUT if the number is > LONG_MAX or < LONG_MIN will return `0` if neg
+ *    or `-1` if pos.
 */
 
-int	ft_atoi(const char *str)
+long	fk_atol(const char *str)
 {
 	unsigned long	nbr;
 	unsigned long	cutoff;
@@ -63,5 +52,5 @@ int	ft_atoi(const char *str)
 		nbr += (*str - '0');
 		str++;
 	}
-	return ((int []){nbr, -nbr}[isneg]);
+	return ((long []){nbr, -nbr}[isneg]);
 }
